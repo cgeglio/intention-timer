@@ -4,3 +4,30 @@
   box-sizing: border-box;
   margin: 0px;
 }
+
+body {
+  background-color: #2B2733;
+  font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  background-color: #46424D;
+  color: #cbc9cf;
+}
+
+h2 {
+  color: #cbc9cf;
+}
+
+form {
+  background-color: #46424D;
+}
+
+aside {
+  background-color: #46424D;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+}
