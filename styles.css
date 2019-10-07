@@ -19,10 +19,12 @@ header {
 
 h2 {
   color: #cbc9cf;
+  margin-bottom: 25px;
 }
 
 form {
   background-color: #46424D;
+  margin-left: 15px;
 }
 
 aside {
@@ -31,6 +33,7 @@ aside {
   flex-direction: column;
   color: #cbc9cf;
   border-left: 2px solid #cbc9cf;
+  padding-left: 30px;
 }
 
 img {
@@ -69,5 +72,45 @@ main {
   display: flex;
   flex-direction: column;
   width: 60%;
-  /* justify-content: flex-end; */
+}
+
+p {
+  color: #fff;
+}
+
+label {
+  color: #fff;
+
+}
+
+input {
+  display: inline;
+  margin-left: 10%;
+  width: 80%;
+  background-color: #46424D;
+  border: solid 0px;
+  border-bottom: solid #fff 1px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 40%;
+  margin-right: 0;
+  margin-left: 7%;
+  margin-top: 10px;
+}
+
+label {
+  margin-left: 10%;
+}
+
+
+#time {
+  display: flex;
+  flex-direction: row;
+
 }
