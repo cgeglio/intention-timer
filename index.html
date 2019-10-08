@@ -31,12 +31,13 @@
       <section id="time">
         <section class="form-box">
           <label>Minutes</label>
-          <input type="text" name="value" />
+          <input onkeydown="return event.keyCode !== 69" type="number" name="value" min="0" max="120"/>
+          <!-- VA: the on key down 69 prevents a user from entering e/E- FYI -->
         </section>
 
         <section class="form-box">
           <label>Seconds</label>
-          <input type="text" name="value" />
+          <input onkeydown="return event.keyCode !== 69" type="number" name="value" min="0" max="59"/>
         </section>
 
       </section>
@@ -50,5 +51,6 @@
       <p class="sidebar"> You haven't logged any activities yet. Complete the form to the left to get started.</p>
     </aside>
   </div>
+  <script src="main.js"></script>
   </body>
 </html>

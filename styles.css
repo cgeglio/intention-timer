@@ -96,11 +96,13 @@ input {
   display: inline;
   margin-left: 10%;
   width: 80%;
+  height: 30px;
   background-color: #46424D;
   border: solid 0px;
   border-bottom: solid #fff 1px;
   margin-top: 30px;
   margin-bottom: 50px;
+
 }
 
 .form-box {
