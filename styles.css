@@ -69,7 +69,10 @@ li {
   height: 80px;
   align-items: center;
   flex-direction: column;
+}
 
+.li-study {
+  border-color: solid 5px magenta;
 }
 
 .tester {
