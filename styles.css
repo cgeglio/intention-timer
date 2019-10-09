@@ -29,11 +29,16 @@ h2 {
   padding-top: 30px;
 }
 
-form {
+form,
+#icons {
   background-color: #46424D;
   margin-left: 3%;
   border-radius: 10px;
   padding: 20px;
+}
+
+#icons {
+  display: block;
 }
 
 aside {
@@ -164,4 +169,8 @@ output {
   font-size: 50pt;
   text-align: center;
   margin-bottom: 100px;
+}
+
+#description {
+  style: block;
 }

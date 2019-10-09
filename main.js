@@ -46,9 +46,16 @@ function getTimer () {
   }
 };
 
+function showDescrip () {
+  event.preventDefault();
+  var descrip = document.querySelector('h4');
+  var activity = document.getElementById('description');
+  descrip.innerText = activity.value;
+};
+
 setTime.addEventListener('click', hideForm);
 setTime.addEventListener('click', getTimer);
-
+setTime.addEventListener('click', showDescrip);
 
 var out = document.querySelector('output');
 var min = document.getElementById('min');
