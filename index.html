@@ -25,26 +25,28 @@
         <li class="exercise2"><img class="exercise" src="assets/exercise.svg" alt="exercise icon">Exercise</li>
       </ul>
 
-      <label>What Would You Like to Accomplish During This Time?</label>
-      <input type="text" name="value" />
+      <label>What Would You Like to Accomplish During This Time?<span id="error-description"></span></label>
+      <input id="description" type="text" name="value" />
 
       <section id="time">
         <section class="form-box">
-          <label>Minutes</label>
-          <input onkeydown="return event.keyCode !== 69" type="number" name="value" min="0" max="120"/>
-          <!-- VA: the on key down 69 prevents a user from entering e/E- FYI -->
+          <label>Minutes<span id="error-minutes"></span></label>
+          <input id="min" onkeydown="return event.keyCode !== 69" type="number" min="0" max="120"/>
         </section>
 
         <section class="form-box">
-          <label>Seconds</label>
-          <input onkeydown="return event.keyCode !== 69" type="number" name="value" min="0" max="59"/>
+          <label>Seconds<span id="error-seconds"></span></label>
+          <input id="sec" onkeydown="return event.keyCode !== 69" type="number" min="0" max="59"/>
         </section>
 
       </section>
       <button>START ACTIVITY</button>
-
     </form>
-
+    <section id="show-timer">
+      <h4>description<h4>
+      <output>00:00</output>
+      <button id="start">START</button>
+    </section>
     </main>
     <aside>
       <h2>Past Activities</h2>
