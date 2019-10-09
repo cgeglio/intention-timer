@@ -25,17 +25,17 @@
         <li><img class="exercise" src="assets/exercise.svg" alt="exercise icon">Exercise</li>
       </ul>
 
-      <label>What Would You Like to Accomplish During This Time?</label>
+      <label>What Would You Like to Accomplish During This Time?<span id="error-description"></span></label>
       <input id="description" type="text" name="value" />
 
       <section id="time">
         <section class="form-box">
-          <label>Minutes</label>
+          <label>Minutes<span id="error-minutes"></span></label>
           <input id="min" onkeydown="return event.keyCode !== 69" type="number" min="0" max="120"/>
         </section>
 
         <section class="form-box">
-          <label>Seconds</label>
+          <label>Seconds<span id="error-seconds"></span></label>
           <input id="sec" onkeydown="return event.keyCode !== 69" type="number" min="0" max="59"/>
         </section>
 

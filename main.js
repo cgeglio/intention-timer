@@ -93,3 +93,24 @@ starter.addEventListener('click', function(){
 
 		timer();
 	}, false);
+
+//
+// function validateForm(){
+// 	var description = document.getElementById('description').value;
+// 	var minutes = document.getElementById('min').value;
+// 	var seconds = document.getElementById('sec').value;
+//
+// 	if (description.length<1) {
+//         document.getElementById('error-description').innerHTML = " Please Enter A Description *"
+//     }
+//     if (minutes.length<1 ) {
+//         document.getElementById('error-minutes').innerHTML = " Please Enter Minutes *";
+//     }
+//     if (seconds.length<1 || seconds.length>2) {
+//         document.getElementById('error-seconds').innerHTML = " Please Enter Seconds *";
+//     }
+//
+//     if(description.length<1 || minutes.length<1 || seconds.length<1 ||{
+//        	return false;
+//     }
+// };
