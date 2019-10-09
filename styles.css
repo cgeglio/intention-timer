@@ -46,8 +46,6 @@ aside {
 }
 
 img {
-  height: 20px;
-  width: 20px;
 }
 
 ul {
@@ -55,24 +53,52 @@ ul {
   justify-content: flex-start;
   flex-direction: row;
   align-content: center;
+  padding-bottom: 50px;
 }
 
 li {
-  border: solid 3px #fff;
-  border-radius: 3px;
-  margin: 50px;
+  border-radius: 5px;
+  border: solid 3px;
+  margin: 3%;
   list-style: none;
-  color: #fff;
+  width: 26%;
   display: flex;
   justify-content: center;
-  width: 200px;
-  height: 80px;
   align-items: center;
   flex-direction: column;
 }
 
-.li-study {
-  border-color: solid 5px magenta;
+.study,
+.study2,
+.meditate,
+.meditate2,
+.exercise,
+.exercise2 {
+  color: #fff;
+  height: 45%;
+  width: 23%;
+}
+
+.li-study,
+.li-meditate,
+.li-exercise {
+  height: 45%;
+  width: 23%;
+}
+
+.li-study{
+  color: #B3FD78;
+  background-image: url("assets/meditate-active.svg");
+}
+
+.li-meditate{
+  color: #C278FD;
+  background-image: url("assets/meditate-active.svg");
+}
+
+.li-exercise{
+  color: #FD8078;
+  background-image: url("assets/meditate-active.svg");
 }
 
 .tester {
@@ -92,7 +118,6 @@ p {
 
 label {
   color: #fff;
-
 }
 
 input {
@@ -105,7 +130,8 @@ input {
   border-bottom: solid #fff 1px;
   margin-top: 30px;
   margin-bottom: 50px;
-
+  color: #fff;
+  font-size: 18;
 }
 
 .form-box {
@@ -134,7 +160,7 @@ button {
   margin-right: 10%;
   height: 30px;
   width: 20%;
-  font-size: 10pt;
+  font-size: 15;
   border-radius: 4px;
 }
 
