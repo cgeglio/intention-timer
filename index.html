@@ -15,8 +15,6 @@
     <section>
       <h2>New Activity</h2>
     </section>
-    <!-- <div class="tester"> -->
-
     <form>
       <p>Select a Category</p>
       <ul>
@@ -24,21 +22,17 @@
         <li class="meditate2"><img class="meditate" src="assets/meditate.svg" alt="meditate icon">Meditate</li>
         <li class="exercise2"><img class="exercise" src="assets/exercise.svg" alt="exercise icon">Exercise</li>
       </ul>
-
       <label>What Would You Like to Accomplish During This Time?<span id="error-description"></span></label>
       <input id="description" type="text" name="value" />
-
       <section id="time">
         <section class="form-box">
           <label>Minutes<span id="error-minutes"></span></label>
           <input id="min" onkeydown="return event.keyCode !== 69" type="number" min="0" max="120"/>
         </section>
-
         <section class="form-box">
           <label>Seconds<span id="error-seconds"></span></label>
           <input id="sec" onkeydown="return event.keyCode !== 69" type="number" min="0" max="59"/>
         </section>
-
       </section>
       <button class="submitBtn">START ACTIVITY</button>
     </form>
