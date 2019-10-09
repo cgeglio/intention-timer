@@ -141,3 +141,27 @@ button {
 .sidebar {
   text-align: center;
 }
+
+#show-timer {
+  display: none;
+  color: white;
+}
+
+#start {
+  width: 300px;
+  height: 300px;
+  border: 2px solid blue;
+  background: none;
+  border-radius: 50%;
+  line-height: 100px;
+  margin-right: 300px;
+  font-size: 60px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+output {
+  font-size: 50pt;
+  text-align: center;
+  margin-bottom: 100px;
+}

@@ -31,24 +31,21 @@
       <section id="time">
         <section class="form-box">
           <label>Minutes</label>
-          <input onkeydown="return event.keyCode !== 69" type="number" name="value" min="0" max="120"/>
-          <!-- VA: the on key down 69 prevents a user from entering e/E- FYI -->
+          <input id="min" onkeydown="return event.keyCode !== 69" type="number" min="0" max="120"/>
         </section>
 
         <section class="form-box">
           <label>Seconds</label>
-          <input onkeydown="return event.keyCode !== 69" type="number" name="value" min="0" max="59"/>
+          <input id="sec" onkeydown="return event.keyCode !== 69" type="number" min="0" max="59"/>
         </section>
 
       </section>
       <button>START ACTIVITY</button>
     </form>
-    <div class="container">
-      <p id="counter">
-        <span id="timer-mins"></span>
-        <span id="timer-secs"></span>
-      </p>
-    </div>
+    <section id="show-timer">
+      <output>00:00</output>
+      <button id="start">START</button>
+    </section>
     </main>
     <aside>
       <h2>Past Activities</h2>
