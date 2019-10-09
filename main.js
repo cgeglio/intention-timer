@@ -78,6 +78,9 @@ starter.addEventListener('click', function(){
 					out.value = "00:" + (userSec<10 ? '0' + userSec : userSec);
 					setTimeout("timer()", 1000);
 				}
+      if (userSec===0){
+          alert('time up');
+      }
 			}
 		}
 
