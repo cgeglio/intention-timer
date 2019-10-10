@@ -179,7 +179,8 @@ label {
   border-radius: 4px;
 }
 
-#submitLog {
+#log {
+  display: block;
   text-align: center;
   margin: 20px;
   width: 35%;
@@ -187,10 +188,6 @@ label {
   border-radius: 4px;
   padding: 8px;
   color: #46424D;
-}
-
-#log {
-  display: block;
 }
 
 .sidebar {
