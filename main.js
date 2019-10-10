@@ -1,46 +1,63 @@
-// var picS = document.querySelector('.study');
-// var picM = document.querySelector('.meditate');
-// var picE = document.querySelector('.exercise');
-
+//Activate Icons
 function activeStudy() {
   var pic = document.querySelector('.study');
   var select = document.querySelector('.study2');
+  var timerBtn = document.querySelector("#start");
+  var titleHeader = document.querySelector("output");
+  var timerHeader = document.querySelector("h4");
   pic.src ="assets/study-active.svg";
   pic.classList.add("li-study");
   pic.classList.remove("study");
   select.classList.add("li-study");
   select.classList.remove("study");
+  timerBtn.classList.add("timerStudy");
+  titleHeader.classList.add("timerHeader")
+  timerHeader.classList.add("timerHeader")
 }
 
 function activeMeditate() {
   var pic = document.querySelector('.meditate');
   var select = document.querySelector('.meditate2');
+  var timerBtn = document.querySelector("#start");
+  var titleHeader = document.querySelector("output");
+  var timerHeader = document.querySelector("h4");
   pic.src = "assets/meditate-active.svg";
   pic.classList.add("li-meditate");
   pic.classList.remove("meditate");
   select.classList.add("li-meditate");
   select.classList.remove("meditate");
-
-  console.log(pic)
+  timerBtn.classList.add("timerMeditate");
+  titleHeader.classList.add("timerHeader")
+  timerHeader.classList.add("timerHeader")
 }
 
 function activeExercise() {
   var pic = document.querySelector('.exercise');
   var select = document.querySelector('.exercise2');
+  var timerBtn = document.querySelector("#start");
+  var titleHeader = document.querySelector("output");
+  var timerHeader = document.querySelector("h4");
   pic.src = "assets/exercise-active.svg";
   pic.classList.add("li-exercise");
   pic.classList.remove("exercise");
   select.classList.add("li-exercise");
   select.classList.remove("exercise");
+  timerBtn.classList.add("timerExercise");
+  titleHeader.classList.add("timerHeader")
+  timerHeader.classList.add("timerHeader")
 }
 
 
 
-// document.querySelector('.study').addEventListener('click', activeStudy);
+
+
+
+
 
 document.querySelector('.study').addEventListener('click', activeStudy);
 document.querySelector('.meditate').addEventListener('click', activeMeditate);
 document.querySelector('.exercise').addEventListener('click', activeExercise);
+
 
 
 // get description to show above timer
@@ -53,6 +70,10 @@ function showDescrip () {
 };
 
 setTime.addEventListener('click', showDescrip);
+
+
+
+
 
 // get error messages to show on all four inputs
 var study = false;
@@ -107,9 +128,23 @@ function exerciseClicked() {
   exercise = true
 };
 
+
 document.querySelector('.study2').addEventListener('click', studyClicked)
 document.querySelector('.meditate2').addEventListener('click', meditateClicked)
 document.querySelector('.exercise2').addEventListener('click', exerciseClicked)
+
+
+
+
+
+
+
+
+
+
+setTime.addEventListener('click', showDescrip);
+
+
 
 setTime.addEventListener('click', formValidation);
 
@@ -118,6 +153,7 @@ var out = document.querySelector('output');
 var min = document.getElementById('min');
 var sec = document.getElementById('sec');
 var starter = document.getElementById('start');
+
 
 starter.addEventListener('click', function(){
 	var userMin = min.value;
@@ -140,9 +176,10 @@ starter.addEventListener('click', function(){
 					userSec--;
 					out.value = "00:" + (userSec<10 ? '0' + userSec : userSec);
 					setTimeout("timer()", 1000);
+          starter.disabled = true;
 				}
-      if (userSec===0){
-          alert('time up');
+        if(userSec===0){
+          starter.innerHTML = "Great Job!";
       }
 			}
 		}
