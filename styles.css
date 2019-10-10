@@ -184,6 +184,7 @@ label {
 }
 
 .sidebar {
+  display: block;
   text-align: center;
 }
 
@@ -279,4 +280,15 @@ h4 {
 
 #description {
   style: block;
+}
+
+#card {
+  background-color: #46424D;
+  margin-left: 3%;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 2px 3px 3px 0px black;
+  width: 85%;
+  height: 80px;
+  display: none;
 }
