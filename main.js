@@ -133,19 +133,7 @@ document.querySelector('.study2').addEventListener('click', studyClicked)
 document.querySelector('.meditate2').addEventListener('click', meditateClicked)
 document.querySelector('.exercise2').addEventListener('click', exerciseClicked)
 
-
-
-
-
-
-
-
-
-
 setTime.addEventListener('click', showDescrip);
-
-
-
 setTime.addEventListener('click', formValidation);
 
 // get timer to work
@@ -187,21 +175,39 @@ starter.addEventListener('click', function(){
 		timer();
 	}, false);
 
-
+// gets input to display on article card
 var logger = document.getElementById('log');
 var showCard = document.getElementById('card');
-var sideP = document.querySelector('.sidebar')
+var sideP = document.querySelector('.sidebar');
+var cardAct = document.querySelector('.cardActivity');
+var cardTime = document.querySelector('.cardTime');
+var cardChoice = document.querySelector('.cardChoice');
+var cardMins = document.getElementById('cardMins');
+var cardSecs = document.getElementById('cardSecs');
 
-logger.addEventListener("click", function () {
+logger.addEventListener('click', function () {
+  event.preventDefault();
   if (showCard.style.display === "none") {
     showCard.style.display = "block";
     sideP.style.display = "none";
+    cardMins.innerText = minutes.value;
+    cardSecs.innerText = seconds.value;
+    cardAct.innerText = descriptor.value;
+      if (study === true) {
+        cardChoice.innerText = "Study";
+      }
+      if (meditate === true) {
+        cardChoice.innerText = "Meditate";
+      }
+      if (exercise === true) {
+        cardChoice.innerText = "Exercise";
+      }
   } else {
     showCard.style.display = "none";
   }
 });
 
-// function hideForm () {
+ // function hideForm () {
 //     event.preventDefault();
 //     var timeForm = document.querySelector('form');
 //     if (timeForm.style.display === "none") {
