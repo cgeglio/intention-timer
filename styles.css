@@ -184,6 +184,7 @@ label {
 }
 
 .sidebar {
+  display: block;
   text-align: center;
 }
 
@@ -289,4 +290,5 @@ h4 {
   box-shadow: 2px 3px 3px 0px black;
   width: 85%;
   height: 80px;
+  display: none;
 }

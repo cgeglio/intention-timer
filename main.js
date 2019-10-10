@@ -188,6 +188,19 @@ starter.addEventListener('click', function(){
 	}, false);
 
 
+var logger = document.getElementById('log');
+var showCard = document.getElementById('card');
+var sideP = document.querySelector('.sidebar')
+
+logger.addEventListener("click", function () {
+  if (showCard.style.display === "none") {
+    showCard.style.display = "block";
+    sideP.style.display = "none";
+  } else {
+    showCard.style.display = "none";
+  }
+});
+
 // function hideForm () {
 //     event.preventDefault();
 //     var timeForm = document.querySelector('form');
