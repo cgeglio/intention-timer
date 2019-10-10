@@ -91,6 +91,7 @@ var min = document.getElementById('min');
 var sec = document.getElementById('sec');
 var starter = document.getElementById('start');
 
+
 starter.addEventListener('click', function(){
   event.preventDefault();
 	var userMin = min.value;
@@ -113,9 +114,10 @@ starter.addEventListener('click', function(){
 					userSec--;
 					out.value = "00:" + (userSec<10 ? '0' + userSec : userSec);
 					setTimeout("timer()", 1000);
+          starter.disabled = true;
 				}
-      if (userSec===0){
-          alert('time up');
+        if(userSec===0){
+          starter.innerHTML = "Great Job!";
       }
 			}
 		}
