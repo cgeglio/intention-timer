@@ -180,7 +180,13 @@ label {
 }
 
 #log {
-  display: block;
+  text-align: center;
+  margin: 20px;
+  width: 35%;
+  font-size: 20px;
+  border-radius: 4px;
+  padding: 8px;
+  color: #46424D;
 }
 
 .sidebar {
