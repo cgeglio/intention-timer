@@ -22,19 +22,35 @@
         <li class="meditate2"><img class="meditate" src="assets/meditate.svg" alt="meditate icon">Meditate</li>
         <li class="exercise2"><img class="exercise" src="assets/exercise.svg" alt="exercise icon">Exercise</li>
       </ul>
-      <label>What Would You Like to Accomplish During This Time?<span id="error-description"></span></label>
+      <div class="warn"><img src="assets/warning.svg" alt="warning" class="warn-icon" id="warn-button"><span id="error-button"></span></div>
+    <label>What Would You Like to Accomplish During This Time?</label>
       <input id="description" type="text" name="value" />
+      <div class="warn"><img src="assets/warning.svg" alt="warning" class="warn-icon" id="warn-description"><span id="error-description"></span></div>
+
+
+
+
+
       <section id="time">
         <section class="form-box">
-          <label>Minutes<span id="error-minutes"></span></label>
+          <label>Minutes</label>
           <input id="min" onkeydown="return event.keyCode !== 69" type="number" min="0" max="120"/>
+          <div class="warn"><img src="assets/warning.svg" alt="warning" class="warn-icon" id="warn-min"><span id="error-minutes"></span></div>
         </section>
         <section class="form-box">
-          <label>Seconds<span id="error-seconds"></span></label>
+          <label>Seconds</label>
           <input id="sec" onkeydown="return event.keyCode !== 69" type="number" min="0" max="59"/>
+          <div class=warn><img src="assets/warning.svg" alt="warning" class="warn-icon" id="warn-sec"><span id="error-seconds"></span><div>
         </section>
+
+
+
       </section>
-      <button class="submitBtn">START ACTIVITY</button>
+      <button id="submitter">START ACTIVITY</button>
+
+
+
+
     </form>
     <section id="show-timer">
       <h4><h4>

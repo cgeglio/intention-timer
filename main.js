@@ -47,53 +47,108 @@ function activeExercise() {
   timerHeader.classList.add("timerHeader")
 }
 
+
+
+
+
+
+
+
 document.querySelector('.study').addEventListener('click', activeStudy);
 document.querySelector('.meditate').addEventListener('click', activeMeditate);
 document.querySelector('.exercise').addEventListener('click', activeExercise);
 
 
-//Timer Set Up
-var setTime = document.querySelector('button');
 
-function hideForm () {
-    event.preventDefault();
-    var timeForm = document.querySelector('form');
-    if (timeForm.style.display === "none") {
-      timeForm.style.display = "block";
-    } else {
-      timeForm.style.display = "none";
-    }
-  };
-
-function getTimer () {
-  event.preventDefault();
-  var timer = document.getElementById('show-timer');
-  if (timer.style.display === "block") {
-    timer.style.display = "none";
-  } else {
-    timer.style.display = "block";
-  }
-};
+// get description to show above timer
+var setTime = document.getElementById('submitter');
 
 function showDescrip () {
-  event.preventDefault();
   var descrip = document.querySelector('h4');
   var activity = document.getElementById('description');
   descrip.innerText = activity.value;
 };
 
-// function showTime () {
-//   event.preventDefault();
-//   var descrip = document.querySelector('output');
-//   var activityM = document.querySelector("min");
-//   descrip.innerText = activity.value;
-// };
-
-setTime.addEventListener('click', hideForm);
-setTime.addEventListener('click', getTimer);
 setTime.addEventListener('click', showDescrip);
-// setTime.addEventListener('click', showTime);
 
+
+
+
+
+// get error messages to show on all four inputs
+var study = false;
+var meditate = false;
+var exercise = false;
+
+var descriptor = document.getElementById('description');
+var minutes = document.getElementById('min');
+var seconds = document.getElementById('sec');
+var error1 = document.getElementById('error-description');
+var error2 = document.getElementById('error-minutes');
+var error3 = document.getElementById('error-seconds');
+var error4 = document.getElementById('error-button');
+var warning1 = document.getElementById('warn-description');
+var warning2 = document.getElementById('warn-min');
+var warning3 = document.getElementById('warn-sec');
+var warning4 = document.getElementById('warn-button');
+
+function formValidation () {
+  event.preventDefault();
+  var timeForm = document.querySelector('form');
+  var timer = document.getElementById('show-timer');
+    if (descriptor.value.length>0 && minutes.value.length>0 && seconds.value.length>0 && (study === true || meditate === true || exercise === true)) {
+      timeForm.style.display = "none";
+      timer.style.display = "block";
+    }
+    if (descriptor.value.length<1) {
+        error1.innerText = "A Description is Required.";
+        warning1.style.visibility = "visible";
+    }
+    if (minutes.value.length<1) {
+        error2.innerText = "Please Enter Number of Minutes.";
+        warning2.style.visibility = "visible";
+    }
+    if (seconds.value.length<1) {
+        error3.innerText = "Please Enter Number of Seconds.";
+        warning3.style.visibility = "visible";
+    }
+    if (study === false && meditate === false && exercise === false) {
+      error4.innerText = "Please Select an Activity.";
+      warning4.style.visibility = "visible";
+    }
+  };
+
+function studyClicked () {
+  study = true
+};
+function meditateClicked() {
+  meditate = true
+};
+function exerciseClicked() {
+  exercise = true
+};
+
+
+document.querySelector('.study2').addEventListener('click', studyClicked)
+document.querySelector('.meditate2').addEventListener('click', meditateClicked)
+document.querySelector('.exercise2').addEventListener('click', exerciseClicked)
+
+
+
+
+
+
+
+
+
+
+setTime.addEventListener('click', showDescrip);
+
+
+
+setTime.addEventListener('click', formValidation);
+
+// get timer to work
 var out = document.querySelector('output');
 var min = document.getElementById('min');
 var sec = document.getElementById('sec');
@@ -101,7 +156,6 @@ var starter = document.getElementById('start');
 
 
 starter.addEventListener('click', function(){
-  event.preventDefault();
 	var userMin = min.value;
 	var	userSec = sec.value;
 	timer = function(){
@@ -133,23 +187,26 @@ starter.addEventListener('click', function(){
 		timer();
 	}, false);
 
-//
-// function validateForm(){
-// 	var description = document.getElementById('description').value;
-// 	var minutes = document.getElementById('min').value;
-// 	var seconds = document.getElementById('sec').value;
-//
-// 	if (description.length<1) {
-//         document.getElementById('error-description').innerHTML = " Please Enter A Description *"
+
+// function hideForm () {
+//     event.preventDefault();
+//     var timeForm = document.querySelector('form');
+//     if (timeForm.style.display === "none") {
+//       timeForm.style.display = "block";
+//     } else {
+//       timeForm.style.display = "none";
 //     }
-//     if (minutes.length<1 ) {
-//         document.getElementById('error-minutes').innerHTML = " Please Enter Minutes *";
-//     }
-//     if (seconds.length<1 || seconds.length>2) {
-//         document.getElementById('error-seconds').innerHTML = " Please Enter Seconds *";
-//     }
-//
-//     if(description.length<1 || minutes.length<1 || seconds.length<1 ||{
-//        	return false;
-//     }
+//   };
+
+// function getTimer () {
+//   var timer = document.getElementById('show-timer');
+//   if (timer.style.display === "block") {
+//     timer.style.display = "none";
+//   } else {
+//     timer.style.display = "block";
+//   }
 // };
+
+
+// setTime.addEventListener('click', hideForm);
+// setTime.addEventListener('click', getTimer);
