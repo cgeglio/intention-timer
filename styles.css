@@ -22,6 +22,15 @@ h1 {
   padding-top: 10px;
 }
 
+a:link, a:active, a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #2B2733;
+}
+
 h2 {
   color: #cbc9cf;
   margin-bottom: 10px;
@@ -35,6 +44,7 @@ form,
   margin-left: 3%;
   border-radius: 10px;
   padding: 20px;
+  box-shadow: 5px 10px 8px 0px;
 }
 
 #icons {
@@ -43,6 +53,7 @@ form,
 
 aside {
   width: 33%;
+  height: 800px;
   display: flex;
   flex-direction: column;
   color: #cbc9cf;
@@ -53,6 +64,7 @@ aside {
 img {
 }
 
+/* icon selector */
 ul {
   display: flex;
   justify-content: flex-start;
@@ -151,18 +163,19 @@ label {
 }
 
 
+/* timer clock */
 #time {
   display: flex;
   flex-direction: row;
 }
 
-button {
+.submitBtn {
   float: right;
   margin: 20px;
   margin-right: 10%;
   height: 30px;
   width: 20%;
-  font-size: 15;
+  font-size: 10;
   border-radius: 4px;
 }
 
@@ -173,25 +186,57 @@ button {
 #show-timer {
   display: none;
   color: white;
+  background-color: #46424D;
+  box-shadow: 5px 10px 8px 0px black;
+  margin-left: 3%;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 #start {
-  width: 300px;
-  height: 300px;
-  border: 2px solid blue;
   background: none;
   border-radius: 50%;
   line-height: 100px;
-  margin-right: 300px;
-  font-size: 60px;
+  font-size: 40px;
   color: white;
   font-family: 'Montserrat', sans-serif;
+  margin-left: 28%;
+  margin-bottom: 50px;
+}
+
+.timerStudy {
+  align: center;
+  width: 300px;
+  height: 300px;
+  border: 5px solid #B3FD78;
+}
+
+.timerMeditate {
+  width: 300px;
+  height: 300px;
+  border: 5px solid #C278FD;
+}
+
+.timerExercise {
+  width: 300px;
+  height: 300px;
+  border: 5px solid #FD8078;
+}
+
+.timerHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 output {
   font-size: 50pt;
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+}
+
+h4 {
+  font-size: 45px;
 }
 
 #description {
