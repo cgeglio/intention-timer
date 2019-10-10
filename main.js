@@ -82,9 +82,17 @@ function showDescrip () {
   descrip.innerText = activity.value;
 };
 
+// function showTime () {
+//   event.preventDefault();
+//   var descrip = document.querySelector('output');
+//   var activityM = document.querySelector("min");
+//   descrip.innerText = activity.value;
+// };
+
 setTime.addEventListener('click', hideForm);
 setTime.addEventListener('click', getTimer);
 setTime.addEventListener('click', showDescrip);
+// setTime.addEventListener('click', showTime);
 
 var out = document.querySelector('output');
 var min = document.getElementById('min');
