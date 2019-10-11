@@ -60,22 +60,19 @@ document.querySelector('.exercise').addEventListener('click', activeExercise);
 
 
 
-// get description to show above timer
+// gets description to show above timer as well as user time input
 var setTime = document.getElementById('submitter');
 
 function showDescrip () {
   var descrip = document.querySelector('h4');
   var activity = document.getElementById('description');
   descrip.innerText = activity.value;
+    out.innerText = (min.value<10 ? '0' + min.value : min.value) + ":" + (sec.value<10 ? '0' + sec.value : sec.value);
 };
 
 setTime.addEventListener('click', showDescrip);
 
-
-
-
-
-// get error messages to show on all four inputs
+// gets error messages to show on all four inputs
 var study = false;
 var meditate = false;
 var exercise = false;
@@ -99,6 +96,7 @@ function formValidation () {
     if (descriptor.value.length>0 && minutes.value.length>0 && seconds.value.length>0 && (study === true || meditate === true || exercise === true)) {
       timeForm.style.display = "none";
       timer.style.display = "block";
+
     }
     if (descriptor.value.length<1) {
         error1.innerText = "A Description is Required.";
@@ -133,10 +131,12 @@ document.querySelector('.study2').addEventListener('click', studyClicked)
 document.querySelector('.meditate2').addEventListener('click', meditateClicked)
 document.querySelector('.exercise2').addEventListener('click', exerciseClicked)
 
+
+
 setTime.addEventListener('click', showDescrip);
 setTime.addEventListener('click', formValidation);
 
-// get timer to work
+// gets timer to work
 var out = document.querySelector('output');
 var min = document.getElementById('min');
 var sec = document.getElementById('sec');
@@ -147,6 +147,7 @@ starter.addEventListener('click', function(){
 	var userMin = min.value;
 	var	userSec = sec.value;
 	timer = function(){
+    starter.disabled = true;
 		if(userMin>0){
 			if(userSec>0){
 					userSec--;
@@ -156,15 +157,16 @@ starter.addEventListener('click', function(){
 					userMin--;
 					userSec = 59;
 				}
-				setTimeout("timer()", 1000);
 				out.value = (userMin<10 ? '0' + userMin : userMin) + ":" + (userSec<10 ? '0' + userSec : userSec);
+        setTimeout("timer()", 1000);
 			}
+// sets timeout built in method- takes function and how long you want it to wait miliseconds
+      // ? represents an if else if true, do this, if not (represented by :) then do this
 			else{
 				if(userSec>0){
 					userSec--;
 					out.value = "00:" + (userSec<10 ? '0' + userSec : userSec);
 					setTimeout("timer()", 1000);
-          starter.disabled = true;
 				}
         if(userSec===0){
           starter.innerHTML = "Great Job!";
@@ -173,41 +175,54 @@ starter.addEventListener('click', function(){
 		}
 
 		timer();
-	}, false);
+  });
 
-// gets input to display on article card
+
 var logger = document.getElementById('log');
 var showCard = document.getElementById('card');
-var sideP = document.querySelector('.sidebar');
+var sideP = document.querySelector('.sidebar')
 var cardAct = document.querySelector('.cardActivity');
 var cardTime = document.querySelector('.cardTime');
 var cardChoice = document.querySelector('.cardChoice');
 var cardMins = document.getElementById('cardMins');
 var cardSecs = document.getElementById('cardSecs');
 
-logger.addEventListener('click', function () {
+
+logger.addEventListener("click", function () {
   event.preventDefault();
   if (showCard.style.display === "none") {
     showCard.style.display = "block";
     sideP.style.display = "none";
     cardMins.innerText = minutes.value;
-    cardSecs.innerText = seconds.value;
-    cardAct.innerText = descriptor.value;
-      if (study === true) {
-        cardChoice.innerText = "Study";
-      }
-      if (meditate === true) {
-        cardChoice.innerText = "Meditate";
-      }
-      if (exercise === true) {
-        cardChoice.innerText = "Exercise";
-      }
+   cardSecs.innerText = seconds.value;
+   cardAct.innerText = descriptor.value;
+     if (study === true) {
+       cardChoice.innerText = "Study";
+     }
+     if (meditate === true) {
+       cardChoice.innerText = "Meditate";
+     }
+     if (exercise === true) {
+       cardChoice.innerText = "Exercise";
+     }
   } else {
     showCard.style.display = "none";
   }
 });
 
- // function hideForm () {
+//
+// STILL NEED TO DO
+// organize: global variables and alphabetize top lines
+// then event listeners
+// media query!!
+
+
+
+
+
+
+
+// function hideForm () {
 //     event.preventDefault();
 //     var timeForm = document.querySelector('form');
 //     if (timeForm.style.display === "none") {
