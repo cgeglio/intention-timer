@@ -62,10 +62,10 @@ document.querySelector('.exercise').addEventListener('click', activeExercise);
 
 // get description to show above timer
 var setTime = document.getElementById('submitter');
+var descrip = document.querySelector('h4');
+var activity = document.getElementById('description');
 
 function showDescrip () {
-  var descrip = document.querySelector('h4');
-  var activity = document.getElementById('description');
   descrip.innerText = activity.value;
 };
 
@@ -98,7 +98,7 @@ function formValidation () {
   var timer = document.getElementById('show-timer');
     if (descriptor.value.length>0 && minutes.value.length>0 && seconds.value.length>0 && (study === true || meditate === true || exercise === true)) {
       timeForm.style.display = "none";
-      timer.style.display = "block";
+      timer.style.visibility = "visible";
     }
     if (descriptor.value.length<1) {
         error1.innerText = "A Description is Required.";
@@ -184,12 +184,19 @@ var cardTime = document.querySelector('.cardTime');
 var cardChoice = document.querySelector('.cardChoice');
 var cardMins = document.getElementById('cardMins');
 var cardSecs = document.getElementById('cardSecs');
+var newAct = document.getElementById('new');
+
 
 logger.addEventListener('click', function () {
   event.preventDefault();
   if (showCard.style.display === "none") {
     showCard.style.display = "block";
     sideP.style.display = "none";
+    newAct.style.visibility = "visible";
+    logger.style.display = "none";
+    starter.style.display = "none";
+    descrip.style.display = "none";
+    out.style.display = "none";
     cardMins.innerText = minutes.value;
     cardSecs.innerText = seconds.value;
     cardAct.innerText = descriptor.value;
