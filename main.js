@@ -1,47 +1,67 @@
 //Activate Icons
+
+var selectStudy = document.querySelector('.study2');
+var picStudy = document.querySelector('.study');
+
 function activeStudy() {
-  var pic = document.querySelector('.study');
-  var select = document.querySelector('.study2');
+  // var pic = document.querySelector('.study');
+  // var select = document.querySelector('.study2');
   var timerBtn = document.querySelector("#start");
   var titleHeader = document.querySelector("output");
   var timerHeader = document.querySelector("h4");
-  pic.src ="assets/study-active.svg";
-  pic.classList.add("li-study");
-  pic.classList.remove("study");
-  select.classList.add("li-study");
-  select.classList.remove("study");
+  picStudy.src ="assets/study-active.svg";
+  picStudy.classList.add("li-study");
+  picStudy.classList.remove("study");
+  selectStudy.classList.add("li-study");
+  selectStudy.classList.remove("study");
+  // select.classList.add("li-study");
+  // select.classList.remove("study");
   timerBtn.classList.add("timerStudy");
   titleHeader.classList.add("timerHeader")
   timerHeader.classList.add("timerHeader")
 }
 
+var selectMeditate = document.querySelector('.meditate2');
+var picMeditate = document.querySelector('.meditate');
+// selectMeditate.classList.add("li-meditate");
+// selectMeditate.classList.remove("meditate");
+
 function activeMeditate() {
-  var pic = document.querySelector('.meditate');
-  var select = document.querySelector('.meditate2');
+  // var pic = document.querySelector('.meditate');
+  // var select = document.querySelector('.meditate2');
   var timerBtn = document.querySelector("#start");
   var titleHeader = document.querySelector("output");
   var timerHeader = document.querySelector("h4");
-  pic.src = "assets/meditate-active.svg";
-  pic.classList.add("li-meditate");
-  pic.classList.remove("meditate");
-  select.classList.add("li-meditate");
-  select.classList.remove("meditate");
+  picMeditate.src = "assets/meditate-active.svg";
+  picMeditate.classList.add("li-meditate");
+  picMeditate.classList.remove("meditate");
+  selectMeditate.classList.add("li-meditate");
+  selectMeditate.classList.remove("meditate");
+  // select.classList.add("li-meditate");
+  // select.classList.remove("meditate");
   timerBtn.classList.add("timerMeditate");
   titleHeader.classList.add("timerHeader")
   timerHeader.classList.add("timerHeader")
 }
 
+var selectExercise = document.querySelector('.exercise2');
+var picExercise = document.querySelector('.exercise');
+// selectExercise.classList.add("li-exercise");
+// selectExercise.classList.remove("exercise");
+
 function activeExercise() {
-  var pic = document.querySelector('.exercise');
-  var select = document.querySelector('.exercise2');
+  // var pic = document.querySelector('.exercise');
+  // var select = document.querySelector('.exercise2');
   var timerBtn = document.querySelector("#start");
   var titleHeader = document.querySelector("output");
   var timerHeader = document.querySelector("h4");
-  pic.src = "assets/exercise-active.svg";
-  pic.classList.add("li-exercise");
-  pic.classList.remove("exercise");
-  select.classList.add("li-exercise");
-  select.classList.remove("exercise");
+  picExercise.src = "assets/exercise-active.svg";
+  picExercise.classList.add("li-exercise");
+  picExercise.classList.remove("exercise");
+  selectExercise.classList.add("li-exercise");
+  selectExercise.classList.remove("exercise");
+  // select.classList.add("li-exercise");
+  // select.classList.remove("exercise");
   timerBtn.classList.add("timerExercise");
   titleHeader.classList.add("timerHeader")
   timerHeader.classList.add("timerHeader")
@@ -91,14 +111,14 @@ var warning1 = document.getElementById('warn-description');
 var warning2 = document.getElementById('warn-min');
 var warning3 = document.getElementById('warn-sec');
 var warning4 = document.getElementById('warn-button');
+var timeForm = document.querySelector('form');
+var timerShow = document.getElementById('show-timer');
 
 function formValidation () {
   event.preventDefault();
-  var timeForm = document.querySelector('form');
-  var timer = document.getElementById('show-timer');
     if (descriptor.value.length>0 && minutes.value.length>0 && seconds.value.length>0 && (study === true || meditate === true || exercise === true)) {
       timeForm.style.display = "none";
-      timer.style.visibility = "visible";
+      timerShow.style.visibility = "visible";
     }
     if (descriptor.value.length<1) {
         error1.innerText = "A Description is Required.";
@@ -214,6 +234,44 @@ logger.addEventListener('click', function () {
   }
 });
 
+newAct.addEventListener('click', newForm);
+
+function newForm () {
+event.preventDefault();
+  timeForm.style.display = "block";
+  newAct.style.visibility = "hidden";
+  timerShow.style.visibility = "hidden";
+  descriptor.value = "";
+  minutes.value = "";
+  seconds.value = "";
+  if (study === true) {
+    selectStudy.classList.remove("li-study");
+    selectStudy.classList.add("study");
+    // picStudy.style.color = "#fff"
+    picStudy.src ="assets/study.svg";
+    // picStudy.classList.remove("li-study");
+    // picStudy.classList.add("study");
+    study === false;
+  }
+  if (exercise === true) {
+    selectExercise.classList.remove("li-exercise");
+    selectExercise.classList.add("exercise");
+    // picExercise.style.color = "#fff"
+    picExercise.src = "assets/exercise.svg";
+    // picExercise.classList.remove("li-exercise");
+    // picExercise.classList.add("exercise");
+    exercise === false;
+  }
+  if (meditate === true) {
+    selectMeditate.classList.remove("li-meditate");
+    selectMeditate.classList.add("meditate");
+    // picMeditate.style.color = "#fff"
+    picMeditate.src = "assets/meditate.svg";
+    // picMeditate.classList.remove("li-meditate");
+    // picMeditate.classList.add("meditate");
+    meditate === false;
+  }
+}
  // function hideForm () {
 //     event.preventDefault();
 //     var timeForm = document.querySelector('form');

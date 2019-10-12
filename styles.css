@@ -96,26 +96,32 @@ li {
   width: 23%;
 }
 
-.li-study,
+/* .li-study,
 .li-meditate,
 .li-exercise {
   height: 45%;
   width: 23%;
-}
+} */
 
 .li-study{
   color: #B3FD78;
+  height: 45%;
+  width: 23%;
 }
 
 .li-meditate{
   color: #C278FD;
+  height: 45%;
+  width: 23%;
 }
 
 .li-exercise{
   color: #FD8078;
+  height: 45%;
+  width: 23%;
 }
 
-.tester {
+.base {
   display: flex;
   justify-content: space-between;
 }
