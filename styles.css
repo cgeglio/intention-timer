@@ -293,8 +293,41 @@ h4 {
   margin-left: 3%;
   border-radius: 10px;
   padding: 20px;
+  padding-top: 10px;
   box-shadow: 2px 3px 3px 0px black;
   width: 85%;
   height: 80px;
   display: none;
+}
+
+h5{
+  padding-bottom: 2px;
+}
+
+.cardActivity {
+  color: #cbc9cf;
+  font-size: 15px;
+  padding-top: 5px;
+}
+
+.box {
+  content: "";
+  height: 35px;
+  width: 4px;
+  background-color: white;
+  color: white;
+  float: right;
+  border-radius: 3px;
+}
+
+.boxStudy{
+  background-color: #B3FD78;
+}
+
+.boxMeditate{
+  background-color: #C278FD;
+}
+
+.boxExercise{
+  background-color: #FD8078;
 }

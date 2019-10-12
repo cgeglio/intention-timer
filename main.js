@@ -5,6 +5,7 @@ function activeStudy() {
   var timerBtn = document.querySelector("#start");
   var titleHeader = document.querySelector("output");
   var timerHeader = document.querySelector("h4");
+  var boxColor = document.querySelector(".box");
   pic.src ="assets/study-active.svg";
   pic.classList.add("li-study");
   pic.classList.remove("study");
@@ -13,6 +14,7 @@ function activeStudy() {
   timerBtn.classList.add("timerStudy");
   titleHeader.classList.add("timerHeader")
   timerHeader.classList.add("timerHeader")
+  boxColor.classList.add("boxStudy");
 }
 
 function activeMeditate() {
@@ -21,14 +23,16 @@ function activeMeditate() {
   var timerBtn = document.querySelector("#start");
   var titleHeader = document.querySelector("output");
   var timerHeader = document.querySelector("h4");
+  var boxColor = document.querySelector(".box");
   pic.src = "assets/meditate-active.svg";
   pic.classList.add("li-meditate");
   pic.classList.remove("meditate");
   select.classList.add("li-meditate");
   select.classList.remove("meditate");
   timerBtn.classList.add("timerMeditate");
-  titleHeader.classList.add("timerHeader")
-  timerHeader.classList.add("timerHeader")
+  titleHeader.classList.add("timerHeader");
+  timerHeader.classList.add("timerHeader");
+  boxColor.classList.add("boxMeditate");
 }
 
 function activeExercise() {
@@ -37,14 +41,16 @@ function activeExercise() {
   var timerBtn = document.querySelector("#start");
   var titleHeader = document.querySelector("output");
   var timerHeader = document.querySelector("h4");
+  var boxColor = document.querySelector(".box");
   pic.src = "assets/exercise-active.svg";
   pic.classList.add("li-exercise");
   pic.classList.remove("exercise");
   select.classList.add("li-exercise");
   select.classList.remove("exercise");
   timerBtn.classList.add("timerExercise");
-  titleHeader.classList.add("timerHeader")
-  timerHeader.classList.add("timerHeader")
+  titleHeader.classList.add("timerHeader");
+  timerHeader.classList.add("timerHeader");
+  boxColor.classList.add("boxExercise");
 }
 
 
