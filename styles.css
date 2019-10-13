@@ -38,8 +38,9 @@ h2 {
   padding-top: 30px;
 }
 
-form,
+.hide-timer,
 #icons {
+  display: block;
   background-color: #46424D;
   margin-left: 3%;
   border-radius: 10px;
@@ -187,6 +188,7 @@ label {
 
 #log,
 #new {
+  visibility: hidden;
   text-align: center;
   width: 65%;
   font-size: 20px;
@@ -196,7 +198,7 @@ label {
 }
 
 #new {
-  visibility: hidden;
+  /* visibility: hidden; */
   width: 400px;
 }
 
@@ -205,8 +207,7 @@ label {
   text-align: center;
 }
 
-#show-timer {
-  visibility: hidden;
+.show-timer {
   color: white;
   background-color: #46424D;
   box-shadow: 5px 10px 8px 0px black;
@@ -215,13 +216,14 @@ label {
   border-radius: 5px;
   text-align: center;
   height: 80%;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 #start {
+  visibility: hidden;
   background: none;
   border-radius: 50%;
   line-height: 100px;
@@ -258,6 +260,7 @@ label {
 }
 
 output {
+  visibility: hidden;
   font-size: 50pt;
   text-align: center;
   margin-bottom: 50px;
@@ -265,6 +268,7 @@ output {
 }
 
 h4 {
+  visibility: hidden;
   font-size: 45px;
 }
 
@@ -305,7 +309,7 @@ h4 {
   style: block;
 }
 
-#card {
+.newcard {
   background-color: #46424D;
   margin-left: 3%;
   border-radius: 10px;
@@ -313,5 +317,5 @@ h4 {
   box-shadow: 2px 3px 3px 0px black;
   width: 85%;
   height: 80px;
-  display: none;
+  /* visibility: none; */
 }
