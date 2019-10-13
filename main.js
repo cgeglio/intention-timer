@@ -67,18 +67,9 @@ function activeExercise() {
   timerHeader.classList.add("timerHeader")
 }
 
-
-
-
-
-
-
-
 document.querySelector('.study').addEventListener('click', activeStudy);
 document.querySelector('.meditate').addEventListener('click', activeMeditate);
 document.querySelector('.exercise').addEventListener('click', activeExercise);
-
-
 
 // get description to show above timer
 var setTime = document.getElementById('submitter');
@@ -161,13 +152,11 @@ document.querySelector('.exercise2').addEventListener('click', exerciseClicked)
 setTime.addEventListener('click', showDescrip);
 setTime.addEventListener('click', formValidation);
 
-
 // get timer to work
 var out = document.querySelector('output');
 var min = document.getElementById('min');
 var sec = document.getElementById('sec');
 var starter = document.getElementById('start');
-
 
 starter.addEventListener('click', function(){
   var userMin = min.value;
@@ -234,18 +223,6 @@ function newInput () {
    var userSec = sec.value;
 
    var cardChoice = (study===true ? "Study" : meditate===true ? "Meditate" : exercise===true ? "Exercise" : "");
-   // {
-   //      var cardChoice = "Study";
-   //    }
-   //    if (meditate === true) {
-   //      var cardChoice = "Meditate";
-   //    }
-   //    if (exercise === true) {
-   //      var cardChoice = "Exercise";
-   //    }
-   //  };
-   //
-   //  chooser ();
 
    var totalTime = (userMin<10 ? '0' + userMin : userMin) + " MIN " + (userSec<10 ? '0' + userSec : userSec) + " SECONDS";
    plusCard.innerHTML = (`${cardChoice}`) + "<br />" + (`${totalTime}`) + "<br />" + (`${descriptor.value}`);
