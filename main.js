@@ -227,6 +227,8 @@ function logClicked () {
 
 logger.addEventListener('click', logClicked);
 logger.addEventListener('click', createCard);
+logger.addEventListener('click', newInput);
+
 
 // function newCard(){
 //   event.preventDefault();
@@ -238,55 +240,30 @@ logger.addEventListener('click', createCard);
 //       }
 //   };
 
+function newInput () {
+   var plusCard = document.createElement("div");
+   plusCard.className = 'newcard';
+   plusCard.innerHTML = '<p class="cardInfo"><p>'
+   document.getElementsByTagName('aside')[0].appendChild(plusCard);
+   plusCard.innerText = (`${minutes.value}:${seconds.value} ${descriptor.value}`);
+};
 
 function createCard () {
   event.preventDefault();
      if (log === true) {
-          var plusCard = document.createElement("div");
-          plusCard.className = 'newcard';
-          // plusCard.style.display = 'block';
-            //div.style.backgroundColor = "black";
-       document.getElementsByTagName('aside')[0].appendChild(plusCard);
-
-       // logger.style.visibility = "hidden";
-  //   }
-  // if (showCard.style.display === "none") {
-    // log === true;
-    showCard.style.display = "block";
-    sideP.style.display = "none";
-    newAct.style.visibility = "visible";
-    logger.style.visibility = "hidden";
-    starter.innerHTML = "Start";
-    starter.disabled = false;
-    starter.style.visibility = "hidden";
-    descrip.style.visibility = "hidden";
-    out.style.visibility = "hidden";
-  // } else {
-  //   showCard.style.display = "none";
-
-  //   var newcard = document.createElement('div');
-  //     document.aside.appendChild(newcard);
-  //     newcard.className = 'newcard';
-  // var card1 = new Card ((`${minutes.value}:${seconds.value}`), descriptor.value, "exercise");
-  //   var divCard = document.createElement('div');
-  //   divCard.className = 'card';
-  //   document.aside.appendChild(divCard);
-  //     cardMins.innerText = minutes.value;
-  //     cardSecs.innerText = seconds.value;
-  //     cardAct.innerText = descriptor.value;
-  //       if (study === true) {
-  //         cardChoice.innerText = "Study";
-  //       }
-  //       if (meditate === true) {
-  //         cardChoice.innerText = "Meditate";
-  //       }
-  //       if (exercise === true) {
-  //         cardChoice.innerText = "Exercise";
-  //       }
-
-  } else {
-    showCard.style.display = "none";
-  }
+       showCard.style.display = "block";
+       sideP.style.display = "none";
+       newAct.style.visibility = "visible";
+       logger.disabled = true;
+       logger.style.visibility = "hidden";
+       starter.innerHTML = "Start";
+       starter.disabled = false;
+       starter.style.visibility = "hidden";
+       descrip.style.visibility = "hidden";
+       out.style.visibility = "hidden";
+     } else {
+       showCard.style.display = "none";
+     }
 };
 
 newAct.addEventListener('click', newForm);
@@ -319,6 +296,17 @@ function newForm () {
   }
 };
 
+
+              // if (study === true) {
+              //    cardChoice.innerText = "Study";
+              //  }
+              //  if (meditate === true) {
+              //    cardChoice.innerText = "Meditate";
+              //  }
+              //  if (exercise === true) {
+              //    cardChoice.innerText = "Exercise";
+              //  };
+
 // descriptor.value = "";
 // minutes.value = "";
 // seconds.value = "";
@@ -349,7 +337,7 @@ function newForm () {
 // };
 // setTime.addEventListener('click', hideForm);
 // setTime.addEventListener('click', getTimer);
-//
+// //
 // class Card {
 //   constructor(time, category, description) {
 //     this.time = time;

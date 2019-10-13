@@ -323,3 +323,14 @@ h4 {
   height: 80px;
   /* visibility: none; */
 }
+
+
+.card-mins {
+  color: #fff;
+  font-size: 10pt;
+
+}
+
+container {
+  display: none;
+}
