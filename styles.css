@@ -188,7 +188,6 @@ label {
 
 #log,
 #new {
-  visibility: hidden;
   text-align: center;
   width: 65%;
   font-size: 20px;
@@ -197,8 +196,12 @@ label {
   color: #46424D;
 }
 
+#log {
+  visibility: hidden;
+}
+
 #new {
-  /* visibility: hidden; */
+  visibility: hidden;
   width: 400px;
 }
 
@@ -312,6 +315,7 @@ h4 {
 .newcard {
   background-color: #46424D;
   margin-left: 3%;
+  margin-bottom: 10px;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 2px 3px 3px 0px black;

@@ -249,18 +249,18 @@ function createCard () {
        document.getElementsByTagName('aside')[0].appendChild(plusCard);
 
        // logger.style.visibility = "hidden";
-    }
-  if (showCard.style.display === "none") {
+  //   }
+  // if (showCard.style.display === "none") {
     // log === true;
     showCard.style.display = "block";
     sideP.style.display = "none";
     newAct.style.visibility = "visible";
-    logger.visibility = "hidden";
-    // starter.innerHTML = "Start";
-    // starter.disabled = false;
-    // starter.style.visibility = "hidden";
-    // descrip.style.visibility = "hidden";
-    // out.style.visibility = "hidden";
+    logger.style.visibility = "hidden";
+    starter.innerHTML = "Start";
+    starter.disabled = false;
+    starter.style.visibility = "hidden";
+    descrip.style.visibility = "hidden";
+    out.style.visibility = "hidden";
   // } else {
   //   showCard.style.display = "none";
 
