@@ -170,8 +170,8 @@ var starter = document.getElementById('start');
 
 
 starter.addEventListener('click', function(){
-	var userMin = min.value;
-	var	userSec = sec.value;
+  var userMin = min.value;
+  var	userSec = sec.value;
   logger.disabled = true;
 	timer = function(){
 		if(userMin>0){
@@ -214,11 +214,6 @@ var cardMins = document.getElementById('cardMins');
 var cardSecs = document.getElementById('cardSecs');
 var newAct = document.getElementById('new');
 
-// newAct.addEventListener('click', goAgain);
-//
-// function goAgain () {
-//
-// }
 var log = false;
 
 function logClicked () {
@@ -229,23 +224,31 @@ logger.addEventListener('click', logClicked);
 logger.addEventListener('click', createCard);
 logger.addEventListener('click', newInput);
 
-
-// function newCard(){
-//   event.preventDefault();
-//        if (log === true) {
-//             var plusCard = document.createElement('div');
-//             plusCard.className = 'newcard';
-//               //div.style.backgroundColor = "black";
-//          document.getElementsByTagName('aside')[0].appendChild(plusCard);
-//       }
-//   };
-
 function newInput () {
+    event.preventDefault();
    var plusCard = document.createElement("div");
    plusCard.className = 'newcard';
-   plusCard.innerHTML = '<p class="cardInfo"><p>'
    document.getElementsByTagName('aside')[0].appendChild(plusCard);
-   plusCard.innerText = (`${minutes.value}:${seconds.value} ${descriptor.value}`);
+
+   var userMin = min.value;
+   var userSec = sec.value;
+
+   var cardChoice = (study===true ? "Study" : meditate===true ? "Meditate" : exercise===true ? "Exercise" : "");
+   // {
+   //      var cardChoice = "Study";
+   //    }
+   //    if (meditate === true) {
+   //      var cardChoice = "Meditate";
+   //    }
+   //    if (exercise === true) {
+   //      var cardChoice = "Exercise";
+   //    }
+   //  };
+   //
+   //  chooser ();
+
+   var totalTime = (userMin<10 ? '0' + userMin : userMin) + " MIN " + (userSec<10 ? '0' + userSec : userSec) + " SECONDS";
+   plusCard.innerHTML = (`${cardChoice}`) + "<br />" + (`${totalTime}`) + "<br />" + (`${descriptor.value}`);
 };
 
 function createCard () {
@@ -297,47 +300,8 @@ function newForm () {
 };
 
 
-              // if (study === true) {
-              //    cardChoice.innerText = "Study";
-              //  }
-              //  if (meditate === true) {
-              //    cardChoice.innerText = "Meditate";
-              //  }
-              //  if (exercise === true) {
-              //    cardChoice.innerText = "Exercise";
-              //  };
 
-// descriptor.value = "";
-// minutes.value = "";
-// seconds.value = "";
-// logger.style.display = "none";
-// starter.style.display = "none";
-// descrip.style.display = "none";
-// out.style.display = "none";
 
-  // setTime.addEventListener('click', showDescrip);
-  // setTime.addEventListener('click', formValidation);
-
-//  function hideForm () {
-//     event.preventDefault();
-//     var timeForm = document.querySelector('form');
-//     if (timeForm.style.display === "none") {
-//       timeForm.style.display = "block";
-//     } else {
-//       timeForm.style.display = "none";
-//     }
-//   };
-// function getTimer () {
-//   var timer = document.getElementById('show-timer');
-//   if (timer.style.display === "block") {
-//     timer.style.display = "none";
-//   } else {
-//     timer.style.display = "block";
-//   }
-// };
-// setTime.addEventListener('click', hideForm);
-// setTime.addEventListener('click', getTimer);
-// //
 // class Card {
 //   constructor(time, category, description) {
 //     this.time = time;
