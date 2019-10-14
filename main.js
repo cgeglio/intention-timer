@@ -143,9 +143,12 @@ var message = Array(
 )
 
 function randomMessage () {
+  if (starter.innerText !== "START") {
   var randomMessage =
     message[Math.floor(Math.random() * message.length)];
       starter.innerText = randomMessage;
+
+  }
 }
 
 //Timer Fucntionality
@@ -183,15 +186,10 @@ starter.addEventListener("click", function(){
 function logClicked () {
   log = true
 };
-function addBox() {
 
-  var boxColor= document.querySelector(".box")
-  boxColor.classList.add("box-study");
-}
 logger.addEventListener("click", logClicked);
 logger.addEventListener("click", createCard);
 logger.addEventListener("click", newInput);
-logger.addEventListener("click", addBox);
 
 function newInput () {
   event.preventDefault();
@@ -203,7 +201,16 @@ function newInput () {
    var userSec = seconds.value;
    var cardChoice = (study===true ? "Study" : meditate===true ? "Meditate" : exercise===true ? "Exercise" : "");
    var totalTime = (userMin<10 ? "0" + userMin : userMin) + " MIN " + (userSec<10 ? "0" + userSec : userSec) + " SECONDS";
-   plusCard.innerHTML = (`${cardChoice}`) + "<br />" + (`${totalTime}`) + "<br />" + (`${descriptor.value}`);
+
+
+plusCard.innerHTML += `
+  <div>
+   <div class="box"></div>
+   <p>${cardChoice}</p>
+   <p>${totalTime}</p>
+   <p>${descriptor.value}</p>
+  </div>`;
+
 };
 
 function createCard () {
