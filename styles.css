@@ -318,6 +318,7 @@ h4 {
   margin-bottom: 10px;
   border-radius: 10px;
   padding: 20px;
+  padding-top: 10px;
   box-shadow: 2px 3px 3px 0px black;
   width: 85%;
   height: 80px;
@@ -335,4 +336,150 @@ h4 {
 
 container {
   display: none;
+}
+
+h5{
+  padding-bottom: 2px;
+}
+
+.cardActivity {
+  color: #cbc9cf;
+  font-size: 15px;
+  padding-top: 5px;
+}
+
+.box {
+  content: "";
+  height: 35px;
+  width: 4px;
+  background-color: white;
+  color: white;
+  float: right;
+  border-radius: 3px;
+}
+
+.boxStudy{
+  background-color: #B3FD78;
+}
+
+.boxMeditate{
+  background-color: #C278FD;
+}
+
+.boxExercise{
+  background-color: #FD8078;
+}
+
+/* for tablet devices */
+@media only screen and (min-width: 481px) and (max-width: 794px) {
+  .tester {
+    display: block;
+    margin-right: 20px;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+  }
+  ul {
+    display: block;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-content: center;
+    padding-bottom: 10px;
+  }
+
+  aside {
+    width: 100%;
+    border-left: 0px;
+    padding-left: 30px;
+    margin-top: 50px;
+    border-top:  2px solid #46424D;
+  }
+
+  .study2,
+  .meditate2,
+  .exercise2 {
+    height: 45px;
+    width: 55%;
+    margin-left: 20%;
+  }
+
+  .li-study,
+  .li-meditate,
+  .li-exercise {
+    width: 55%;
+  }
+
+  #log {
+    width: 70%;
+  }
+
+  #card {
+    width: 95%;
+  }
+
+  .formLog {
+    width: 80%;
+  }
+}
+
+
+/* for mobile devices */
+@media only screen and (max-width: 480px) {
+  .tester {
+    display: block;
+    margin-right: 20px;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+  }
+  ul {
+    display: block;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-content: center;
+    padding-bottom: 10px;
+  }
+
+  aside {
+    width: 100%;
+    border-left: 0px;
+    padding-left: 30px;
+    margin-top: 50px;
+    border-top:  2px solid #46424D;
+  }
+
+  .study2,
+  .meditate2,
+  .exercise2 {
+    height: 45px;
+    width: 80%;
+  }
+
+  .li-study,
+  .li-meditate,
+  .li-exercise {
+    width: 80%;
+  }
+
+  label {
+    margin: auto;
+  }
+
+  #log {
+    width: 70%;
+  }
+
+  #card {
+    width: 95%;
+  }
+
+  .formLog {
+    width: 80%;
+  }
 }
