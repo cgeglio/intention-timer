@@ -38,8 +38,9 @@ h2 {
   padding-top: 30px;
 }
 
-form,
+.hide-timer,
 #icons {
+  display: block;
   background-color: #46424D;
   margin-left: 3%;
   border-radius: 10px;
@@ -96,26 +97,32 @@ li {
   width: 23%;
 }
 
-.li-study,
+/* .li-study,
 .li-meditate,
 .li-exercise {
   height: 45%;
   width: 23%;
-}
+} */
 
 .li-study{
   color: #B3FD78;
+  height: 45%;
+  width: 23%;
 }
 
 .li-meditate{
   color: #C278FD;
+  height: 45%;
+  width: 23%;
 }
 
 .li-exercise{
   color: #FD8078;
+  height: 45%;
+  width: 23%;
 }
 
-.tester {
+.base {
   display: flex;
   justify-content: space-between;
 }
@@ -175,18 +182,27 @@ label {
   margin-right: 10%;
   height: 30px;
   width: 20%;
-  font-size: 10px;
+  font-size: 15px;
   border-radius: 4px;
 }
 
-#log {
+#log,
+#new {
   text-align: center;
-  margin: 20px;
-  width: 35%;
+  width: 65%;
   font-size: 20px;
   border-radius: 4px;
   padding: 8px;
   color: #46424D;
+}
+
+#log {
+  visibility: hidden;
+}
+
+#new {
+  visibility: hidden;
+  width: 400px;
 }
 
 .sidebar {
@@ -194,8 +210,7 @@ label {
   text-align: center;
 }
 
-#show-timer {
-  display: none;
+.show-timer {
   color: white;
   background-color: #46424D;
   box-shadow: 5px 10px 8px 0px black;
@@ -203,9 +218,15 @@ label {
   padding: 20px;
   border-radius: 5px;
   text-align: center;
+  height: 80%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #start {
+  visibility: hidden;
   background: none;
   border-radius: 50%;
   line-height: 100px;
@@ -242,12 +263,15 @@ label {
 }
 
 output {
+  visibility: hidden;
   font-size: 50pt;
   text-align: center;
   margin-bottom: 50px;
+  /* display: block; */
 }
 
 h4 {
+  visibility: hidden;
   font-size: 45px;
 }
 
@@ -288,15 +312,29 @@ h4 {
   style: block;
 }
 
-#card {
+.newcard {
   background-color: #46424D;
   margin-left: 3%;
+  margin-bottom: 10px;
   border-radius: 10px;
   padding: 20px;
   padding-top: 10px;
   box-shadow: 2px 3px 3px 0px black;
   width: 85%;
   height: 80px;
+  display: flex;
+  flex-direction: column;
+  /* visibility: none; */
+}
+
+
+.card-mins {
+  color: #fff;
+  font-size: 10pt;
+
+}
+
+container {
   display: none;
 }
 

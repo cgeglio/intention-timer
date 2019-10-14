@@ -11,12 +11,12 @@
     <header>
       <h1><a href="index.html">INTENTION TIMER</a></h1>
     </header>
-<div class="tester">
+<div class="base">
 <main>
     <section>
       <h2>New Activity</h2>
     </section>
-    <form>
+    <form class="hide-timer">
       <p>Select a Category</p>
       <ul>
         <li class="study2"><img class="study" src="assets/study.svg" alt="study icon">Study</li>
@@ -41,24 +41,52 @@
       </section>
       <button class="formLog" id="submitter">START ACTIVITY</button>
     </form>
-    <section id="show-timer">
+    <form class="show-timer">
       <h4><h4>
+
+      <button id="new">CREATE NEW ACTIVITY</button>
+
+
       <output></output>
       <button id="start">START</button>
       <br />
       <button id="log">LOG ACTIVITY</button>
-    </section>
-  </main>
-  <aside>
-    <h2>Past Activities</h2>
-    <p class="sidebar"> You haven't logged any activities yet. Complete the form to the left to get started.</p>
-    <div id="card">
-        <div class="box"></div>
-        <h5 class="cardChoice"></h5>
-        <p class="cardTime"><span id="cardMins"></span> MIN <span id="cardSecs"></span> SECONDS </P>
-      <p class="cardActivity"></p>
-    </div>
-  </aside>
+
+
+    </form>
+    </main>
+    <aside>
+
+
+
+
+
+
+      <h2>Past Activities</h2>
+      <p class="sidebar"> You haven't logged any activities yet. Complete the form to the left to get started.</p>
+      <container id="card">
+
+      </container>
+
+
+
+
+
+    </aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </div>
     <script src="main.js"></script>
   </body>

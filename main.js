@@ -1,84 +1,131 @@
 //Activate Icons
+
+var selectStudy = document.querySelector('.study2');
+var picStudy = document.querySelector('.study');
+
 function activeStudy() {
-  var pic = document.querySelector('.study');
-  var select = document.querySelector('.study2');
+  // var pic = document.querySelector('.study');
+  // var select = document.querySelector('.study2');
   var timerBtn = document.querySelector("#start");
   var titleHeader = document.querySelector("output");
   var timerHeader = document.querySelector("h4");
-  var boxColor = document.querySelector(".box");
-  pic.src ="assets/study-active.svg";
-  pic.classList.add("li-study");
-  pic.classList.remove("study");
-  select.classList.add("li-study");
-  select.classList.remove("study");
+
+  picStudy.src ="assets/study-active.svg";
+  picStudy.classList.add("li-study");
+  picStudy.classList.remove("study");
+  selectStudy.classList.add("li-study");
+  selectStudy.classList.remove("study");
+  // select.classList.add("li-study");
+  // select.classList.remove("study");
+
+
+
+
+
+
+
+
   timerBtn.classList.add("timerStudy");
   titleHeader.classList.add("timerHeader")
   timerHeader.classList.add("timerHeader")
   boxColor.classList.add("boxStudy");
 }
 
+var selectMeditate = document.querySelector('.meditate2');
+var picMeditate = document.querySelector('.meditate');
+// selectMeditate.classList.add("li-meditate");
+// selectMeditate.classList.remove("meditate");
+
 function activeMeditate() {
-  var pic = document.querySelector('.meditate');
-  var select = document.querySelector('.meditate2');
+  // var pic = document.querySelector('.meditate');
+  // var select = document.querySelector('.meditate2');
   var timerBtn = document.querySelector("#start");
   var titleHeader = document.querySelector("output");
   var timerHeader = document.querySelector("h4");
-  var boxColor = document.querySelector(".box");
-  pic.src = "assets/meditate-active.svg";
-  pic.classList.add("li-meditate");
-  pic.classList.remove("meditate");
-  select.classList.add("li-meditate");
-  select.classList.remove("meditate");
+
+  picMeditate.src = "assets/meditate-active.svg";
+  picMeditate.classList.add("li-meditate");
+  picMeditate.classList.remove("meditate");
+  selectMeditate.classList.add("li-meditate");
+  selectMeditate.classList.remove("meditate");
+  // select.classList.add("li-meditate");
+  // select.classList.remove("meditate");
+
+
+
+
+
+
+
+
   timerBtn.classList.add("timerMeditate");
   titleHeader.classList.add("timerHeader");
   timerHeader.classList.add("timerHeader");
   boxColor.classList.add("boxMeditate");
 }
 
+var selectExercise = document.querySelector('.exercise2');
+var picExercise = document.querySelector('.exercise');
+// selectExercise.classList.add("li-exercise");
+// selectExercise.classList.remove("exercise");
+
 function activeExercise() {
-  var pic = document.querySelector('.exercise');
-  var select = document.querySelector('.exercise2');
+  // var pic = document.querySelector('.exercise');
+  // var select = document.querySelector('.exercise2');
   var timerBtn = document.querySelector("#start");
   var titleHeader = document.querySelector("output");
   var timerHeader = document.querySelector("h4");
-  var boxColor = document.querySelector(".box");
-  pic.src = "assets/exercise-active.svg";
-  pic.classList.add("li-exercise");
-  pic.classList.remove("exercise");
-  select.classList.add("li-exercise");
-  select.classList.remove("exercise");
+
+  picExercise.src = "assets/exercise-active.svg";
+  picExercise.classList.add("li-exercise");
+  picExercise.classList.remove("exercise");
+  selectExercise.classList.add("li-exercise");
+  selectExercise.classList.remove("exercise");
+  // select.classList.add("li-exercise");
+  // select.classList.remove("exercise");
+
+
+
+
+
+
+
+
   timerBtn.classList.add("timerExercise");
   titleHeader.classList.add("timerHeader");
   timerHeader.classList.add("timerHeader");
   boxColor.classList.add("boxExercise");
 }
 
-
-
-
-
-
-
-
 document.querySelector('.study').addEventListener('click', activeStudy);
 document.querySelector('.meditate').addEventListener('click', activeMeditate);
 document.querySelector('.exercise').addEventListener('click', activeExercise);
 
 
+// get description to show above timer
 
-// gets description to show above timer as well as user time input
+
+
+
+
 var setTime = document.getElementById('submitter');
+var descrip = document.querySelector('h4');
+var activity = document.getElementById('description');
 
 function showDescrip () {
-  var descrip = document.querySelector('h4');
-  var activity = document.getElementById('description');
   descrip.innerText = activity.value;
     out.innerText = (min.value<10 ? '0' + min.value : min.value) + ":" + (sec.value<10 ? '0' + sec.value : sec.value);
 };
 
-setTime.addEventListener('click', showDescrip);
 
-// gets error messages to show on all four inputs
+// setTime.addEventListener('click', showDescrip);
+// get error messages to show on all four
+
+
+
+
+
+
 var study = false;
 var meditate = false;
 var exercise = false;
@@ -94,14 +141,26 @@ var warning1 = document.getElementById('warn-description');
 var warning2 = document.getElementById('warn-min');
 var warning3 = document.getElementById('warn-sec');
 var warning4 = document.getElementById('warn-button');
+var timeForm = document.querySelector('.hide-timer');
+var timerShow = document.querySelector('.show-timer');
 
 function formValidation () {
   event.preventDefault();
-  var timeForm = document.querySelector('form');
-  var timer = document.getElementById('show-timer');
     if (descriptor.value.length>0 && minutes.value.length>0 && seconds.value.length>0 && (study === true || meditate === true || exercise === true)) {
       timeForm.style.display = "none";
-      timer.style.display = "block";
+
+      logger.style.visibility = "visible";
+      starter.style.visibility = "visible";
+      descrip.style.visibility = "visible";
+      out.style.visibility = "visible";
+      timerShow.style.display = "flex";
+
+      function showDescrip () {
+        descrip.innerText = activity.value;
+      };
+
+
+
 
     }
     if (descriptor.value.length<1) {
@@ -148,10 +207,10 @@ var min = document.getElementById('min');
 var sec = document.getElementById('sec');
 var starter = document.getElementById('start');
 
-
 starter.addEventListener('click', function(){
-	var userMin = min.value;
-	var	userSec = sec.value;
+  var userMin = min.value;
+  var	userSec = sec.value;
+  logger.disabled = true;
 	timer = function(){
     starter.disabled = true;
 		if(userMin>0){
@@ -176,12 +235,17 @@ starter.addEventListener('click', function(){
 				}
         if(userSec===0){
           starter.innerHTML = "Great Job!";
+          logger.disabled = false;
       }
 			}
 		}
 
 		timer();
-  });
+
+	});
+
+
+
 
 
 var logger = document.getElementById('log');
@@ -192,37 +256,81 @@ var cardTime = document.querySelector('.cardTime');
 var cardChoice = document.querySelector('.cardChoice');
 var cardMins = document.getElementById('cardMins');
 var cardSecs = document.getElementById('cardSecs');
+var newAct = document.getElementById('new');
+
+var log = false;
+
+function logClicked () {
+  log = true
+};
+
+logger.addEventListener('click', logClicked);
+logger.addEventListener('click', createCard);
+logger.addEventListener('click', newInput);
+
+function newInput () {
+    event.preventDefault();
+   var plusCard = document.createElement("div");
+   plusCard.className = 'newcard';
+   document.getElementsByTagName('aside')[0].appendChild(plusCard);
+
+   var userMin = min.value;
+   var userSec = sec.value;
+
+   var cardChoice = (study===true ? "Study" : meditate===true ? "Meditate" : exercise===true ? "Exercise" : "");
+
+   var totalTime = (userMin<10 ? '0' + userMin : userMin) + " MIN " + (userSec<10 ? '0' + userSec : userSec) + " SECONDS";
+   plusCard.innerHTML = (`${cardChoice}`) + "<br />" + (`${totalTime}`) + "<br />" + (`${descriptor.value}`);
+};
 
 
-logger.addEventListener("click", function () {
+function createCard () {
   event.preventDefault();
-  if (showCard.style.display === "none") {
-    showCard.style.display = "block";
-    sideP.style.display = "none";
-    cardMins.innerText = minutes.value;
-   cardSecs.innerText = seconds.value;
-   cardAct.innerText = descriptor.value;
-     if (study === true) {
-       cardChoice.innerText = "Study";
+     if (log === true) {
+       showCard.style.display = "block";
+       sideP.style.display = "none";
+       newAct.style.visibility = "visible";
+       logger.disabled = true;
+       logger.style.visibility = "hidden";
+       starter.innerHTML = "Start";
+       starter.disabled = false;
+       starter.style.visibility = "hidden";
+       descrip.style.visibility = "hidden";
+       out.style.visibility = "hidden";
+     } else {
+       showCard.style.display = "none";
      }
-     if (meditate === true) {
-       cardChoice.innerText = "Meditate";
-     }
-     if (exercise === true) {
-       cardChoice.innerText = "Exercise";
-     }
-  } else {
-    showCard.style.display = "none";
+};
+
+newAct.addEventListener('click', newForm);
+
+function newForm () {
+  event.preventDefault();
+  timeForm.style.display = "block";
+  timeForm.reset();
+  newAct.style.visibility = "hidden";
+  timerShow.style.display = "none";
+  log === false;
+
+  if (study === true) {
+    selectStudy.classList.remove("li-study");
+    selectStudy.classList.add("study");
+    picStudy.src ="assets/study.svg";
+    study === false;
   }
-});
-
-//
-// STILL NEED TO DO
-// organize: global variables and alphabetize top lines
-// then event listeners
-// media query!!
-
-
+  if (exercise === true) {
+    selectExercise.classList.remove("li-exercise");
+    selectExercise.classList.add("exercise");
+    picExercise.src = "assets/exercise.svg";
+    exercise === false;
+  }
+  if (meditate === true) {
+    selectMeditate.classList.remove("li-meditate");
+    selectMeditate.classList.add("meditate");
+    picMeditate.src = "assets/meditate.svg";
+    meditate === false;
+  }
+};
 
 
 
@@ -236,17 +344,13 @@ logger.addEventListener("click", function () {
 //     } else {
 //       timeForm.style.display = "none";
 //     }
-//   };
+//
 
-// function getTimer () {
-//   var timer = document.getElementById('show-timer');
-//   if (timer.style.display === "block") {
-//     timer.style.display = "none";
-//   } else {
-//     timer.style.display = "block";
+
+// class Card {
+//   constructor(time, category, description) {
+//     this.time = time;
+//     this.category = category;
+//     this.description = description;
 //   }
 // };
-
-
-// setTime.addEventListener('click', hideForm);
-// setTime.addEventListener('click', getTimer);
