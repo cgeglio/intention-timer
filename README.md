@@ -9,7 +9,7 @@
 - A Start Activity button is provided to submit the data. When the button is clicked, the user should no longer see the      form, and instead see a timer clock. The timer clock should display the minutes a seconds, as well the and description. The   timer should match the color of the activity selected.  
 - If the Start Activity button is clicked before the user has entered information into all four inputs, the user will        receive an error message.
 
-![alt text](https://user-images.githubusercontent.com/53594458/66725302-20e8c280-ee20-11e9-93d0-ecc719699a00.png "Landing Page")
+![alt text](width: "500px" https://user-images.githubusercontent.com/53594458/66725302-20e8c280-ee20-11e9-93d0-ecc719699a00.png "Landing Page")
 ![alt text](https://user-images.githubusercontent.com/53594458/66725313-38c04680-ee20-11e9-818b-b9e89e589054.png "Colored activity button")
 
 **Iteration Two | Build an MVP**
