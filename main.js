@@ -242,18 +242,24 @@ function newForm () {
   timerShow.style.display = "none";
   log === false;
   if (study === true) {
+    selectMeditate.classList.remove("disabled");
+    selectExercise.classList.remove("disabled");
     selectStudy.classList.remove("li-study");
     selectStudy.classList.add("study");
     picStudy.src ="assets/study.svg";
     study === false;
   }
   if (exercise === true) {
+    selectMeditate.classList.remove("disabled");
+    selectStudy.classList.remove("disabled");
     selectExercise.classList.remove("li-exercise");
     selectExercise.classList.add("exercise");
     picExercise.src = "assets/exercise.svg";
     exercise === false;
   }
   if (meditate === true) {
+    selectStudy.classList.remove("disabled");
+    selectExercise.classList.remove("disabled");
     selectMeditate.classList.remove("li-meditate");
     selectMeditate.classList.add("meditate");
     picMeditate.src = "assets/meditate.svg";
