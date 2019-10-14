@@ -7,22 +7,24 @@
 
 body {
   background-color: #2B2733;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 header {
   background-color: #46424D;
   color: #fff;
   height: 60px;
-  width: 100%;
   text-align: center;
+  width: 100%;
 }
 
 h1 {
   padding-top: 10px;
 }
 
-a:link, a:active, a:visited {
+a:link,
+a:active,
+a:visited {
   color: #fff;
   text-decoration: none;
 }
@@ -40,12 +42,12 @@ h2 {
 
 .hide-timer,
 #icons {
-  display: block;
   background-color: #46424D;
-  margin-left: 3%;
   border-radius: 10px;
-  padding: 20px;
   box-shadow: 5px 10px 8px 0px;
+  display: block;
+  margin-left: 3%;
+  padding: 20px;
 }
 
 #icons {
@@ -53,56 +55,46 @@ h2 {
 }
 
 aside {
-  width: 33%;
-  height: 800px;
+  border-left: 2px solid #46424D;
+  color: #CBC9CF;
   display: flex;
   flex-direction: column;
-  color: #cbc9cf;
-  border-left: 2px solid #46424D;
+  height: 800px;
   padding-left: 30px;
-}
-
-img {
+  width: 33%;
 }
 
 /* icon selector */
 ul {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
   align-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   padding-bottom: 20px;
 }
 
 li {
-  border-radius: 5px;
-  border: solid 3px;
-  margin: 3%;
-  list-style: none;
-  width: 26%;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  border: solid 3px;
+  border-radius: 5px;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  margin: 3%;
+  width: 26%;
 }
 
 .study,
-.study2,
+.study-2,
 .meditate,
-.meditate2,
+.meditate-2,
 .exercise,
-.exercise2 {
+.exercise-2 {
   color: #fff;
   height: 45%;
   width: 23%;
 }
-
-/* .li-study,
-.li-meditate,
-.li-exercise {
-  height: 45%;
-  width: 23%;
-} */
 
 .li-study{
   color: #B3FD78;
@@ -120,6 +112,10 @@ li {
   color: #FD8078;
   height: 45%;
   width: 23%;
+}
+
+.disabled {
+  pointer-events: none;
 }
 
 .base {
@@ -142,27 +138,27 @@ label {
 }
 
 input {
-  display: inline;
-  margin-left: 10%;
-  width: 80%;
-  height: 30px;
   background-color: #46424D;
   border: solid 0px;
   border-bottom: solid #fff 1px;
-  margin-top: 30px;
-  margin-bottom: 30px;
   color: #fff;
+  display: inline;
   font-size: 18;
+  height: 30px;
+  margin-bottom: 30px;
+  margin-left: 10%;
+  margin-top: 30px;
+  width: 80%;
 }
 
 .form-box {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: 40%;
-  margin-right: 0;
   margin-left: 7%;
+  margin-right: 0;
   margin-top: 10px;
+  width: 40%;
 }
 
 label {
@@ -176,32 +172,28 @@ label {
   flex-direction: row;
 }
 
-.formLog {
+.form-log {
+  border-radius: 4px;
   float: right;
+  font-size: 12px;
+  height: 30px;
   margin: 20px;
   margin-right: 10%;
-  height: 30px;
   width: 20%;
-  font-size: 15px;
-  border-radius: 4px;
 }
 
 #log,
 #new {
-  text-align: center;
-  width: 65%;
-  font-size: 20px;
   border-radius: 4px;
-  padding: 8px;
   color: #46424D;
-}
-
-#log {
+  font-size: 20px;
+  padding: 8px;
+  text-align: center;
   visibility: hidden;
+  width: 65%;
 }
 
 #new {
-  visibility: hidden;
   width: 400px;
 }
 
@@ -211,120 +203,100 @@ label {
 }
 
 .show-timer {
-  color: white;
+  align-items: center;
   background-color: #46424D;
-  box-shadow: 5px 10px 8px 0px black;
-  margin-left: 3%;
-  padding: 20px;
   border-radius: 5px;
-  text-align: center;
-  height: 80%;
+  box-shadow: 5px 10px 8px 0px black;
+  color: #fff;
   display: none;
   flex-direction: column;
+  height: 88%;
   justify-content: center;
-  align-items: center;
+  margin-left: 3%;
+  padding: 20px;
+  text-align: center;
 }
 
 #start {
-  visibility: hidden;
   background: none;
   border-radius: 50%;
-  line-height: 100px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
   font-size: 40px;
-  color: white;
-  font-family: 'Montserrat', sans-serif;
+  line-height: 100px;
   margin-bottom: 50px;
+  visibility: hidden;
 }
 
 
-.timerStudy {
-  align: center;
-  width: 300px;
-  height: 300px;
+.timer-study {
   border: 5px solid #B3FD78;
+  height: 300px;
+  width: 300px;
 }
 
-.timerMeditate {
-  width: 300px;
-  height: 300px;
+.timer-meditate {
   border: 5px solid #C278FD;
-}
-
-.timerExercise {
-  width: 300px;
   height: 300px;
-  border: 5px solid #FD8078;
+  width: 300px;
 }
 
-.timerHeader {
+.timer-exercise {
+  border: 5px solid #FD8078;
+  height: 300px;
+  width: 300px;
+}
+
+.timer-header {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 output {
-  visibility: hidden;
   font-size: 50pt;
-  text-align: center;
   margin-bottom: 50px;
-  /* display: block; */
+  text-align: center;
+  visibility: hidden;
 }
 
 h4 {
-  visibility: hidden;
   font-size: 45px;
+  visibility: hidden;
 }
 
-/* span {
-  display: inline-block;
-  font-size: 14px;
-  color: #EFB7EC;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  margin: 3px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-} */
-
 .warn {
+  color: #EFB7EC;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
   margin-bottom: 20px;
   margin-left: 7%;
-  font-size: 14px;
-  color: #EFB7EC;
-  font-family: 'Montserrat', sans-serif;
 }
 
 .warn-icon {
-  visibility: hidden;
-  /* display: inline-block; */
   height: 20px;
-  width: 20px;
   margin-right: 5px;
-  /* margin-left: 10%; */
+  visibility: hidden;
+  width: 20px;
 }
 
-/* #warn1 {
-  display: flex;
-  flex-flow: row nowrap;
-} */
 
 #description {
   style: block;
 }
 
-.newcard {
+.new-card {
   background-color: #46424D;
-  margin-left: 3%;
-  margin-bottom: 10px;
   border-radius: 10px;
-  padding: 20px;
-  padding-top: 10px;
   box-shadow: 2px 3px 3px 0px black;
-  width: 85%;
-  height: 80px;
   display: flex;
   flex-direction: column;
-  /* visibility: none; */
+  height: 80px;
+  margin-left: 3%;
+  margin-bottom: 10px;
+  padding: 20px;
+  padding-top: 10px;
+  width: 85%;
 }
 
 
@@ -342,68 +314,68 @@ h5{
   padding-bottom: 2px;
 }
 
-.cardActivity {
+.card-activity {
   color: #cbc9cf;
   font-size: 15px;
   padding-top: 5px;
 }
 
 .box {
+  border-radius: 3px;
+  color: #fff;
   content: "";
   height: 35px;
+  margin-left: auto;
   width: 4px;
-  background-color: white;
-  color: white;
-  float: right;
-  border-radius: 3px;
 }
 
-.boxStudy{
+.box-study{
   background-color: #B3FD78;
 }
 
-.boxMeditate{
+.box-meditate{
   background-color: #C278FD;
 }
 
-.boxExercise{
+.box-exercise{
   background-color: #FD8078;
 }
 
 /* for tablet devices */
 @media only screen and (min-width: 481px) and (max-width: 794px) {
-  .tester {
-    display: block;
+  .base {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     margin-right: 20px;
   }
 
   main {
     display: flex;
-    flex-direction: column;
-    width: auto;
+    width: 100%;
   }
   ul {
-    display: block;
-    justify-content: flex-start;
-    flex-direction: column;
     align-content: center;
+    display: block;
+    flex-direction: column;
+    justify-content: flex-start;
     padding-bottom: 10px;
   }
 
   aside {
-    width: 100%;
     border-left: 0px;
-    padding-left: 30px;
-    margin-top: 50px;
     border-top:  2px solid #46424D;
+    margin-top: 50px;
+    padding-left: 30px;
+    width: 100%;
   }
 
-  .study2,
-  .meditate2,
-  .exercise2 {
+  .study-2,
+  .meditate-2,
+  .exercise-2 {
     height: 45px;
-    width: 55%;
     margin-left: 20%;
+    width: 55%;
   }
 
   .li-study,
@@ -420,7 +392,7 @@ h5{
     width: 95%;
   }
 
-  .formLog {
+  .form-log {
     width: 80%;
   }
 }
@@ -428,8 +400,10 @@ h5{
 
 /* for mobile devices */
 @media only screen and (max-width: 480px) {
-  .tester {
-    display: block;
+.base {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     margin-right: 20px;
   }
 
@@ -439,24 +413,24 @@ h5{
     width: auto;
   }
   ul {
-    display: block;
-    justify-content: flex-start;
-    flex-direction: column;
     align-content: center;
+    display: block;
+    flex-direction: column;
+    justify-content: flex-start;
     padding-bottom: 10px;
   }
 
   aside {
-    width: 100%;
     border-left: 0px;
-    padding-left: 30px;
-    margin-top: 50px;
     border-top:  2px solid #46424D;
+    margin-top: 50px;
+    padding-left: 30px;
+    width: 100%;
   }
 
-  .study2,
-  .meditate2,
-  .exercise2 {
+  .study-2,
+  .meditate-2,
+  .exercise-2 {
     height: 45px;
     width: 80%;
   }
@@ -479,7 +453,7 @@ h5{
     width: 95%;
   }
 
-  .formLog {
+  .form-log {
     width: 80%;
   }
 }

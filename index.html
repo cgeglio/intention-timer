@@ -11,83 +11,52 @@
     <header>
       <h1><a href="index.html">INTENTION TIMER</a></h1>
     </header>
-<div class="base">
-<main>
-    <section>
-      <h2>New Activity</h2>
-    </section>
-    <form class="hide-timer">
-      <p>Select a Category</p>
-      <ul>
-        <li class="study2"><img class="study" src="assets/study.svg" alt="study icon">Study</li>
-        <li class="meditate2"><img class="meditate" src="assets/meditate.svg" alt="meditate icon">Meditate</li>
-        <li class="exercise2"><img class="exercise" src="assets/exercise.svg" alt="exercise icon">Exercise</li>
-      </ul>
-      <div class="warn"><img src="assets/warning.svg" alt="warning" class="warn-icon" id="warn-button"><span id="error-button"></span></div>
-    <label>What Would You Like to Accomplish During This Time?</label>
-      <input id="description" type="text" name="value" />
-      <div class="warn"><img src="assets/warning.svg" alt="warning" class="warn-icon" id="warn-description"><span id="error-description"></span></div>
-      <section id="time">
-        <section class="form-box">
-          <label>Minutes</label>
-          <input id="min" onkeydown="return event.keyCode !== 69" type="number" min="0" max="120"/>
-          <div class="warn"><img src="assets/warning.svg" alt="warning" class="warn-icon" id="warn-min"><span id="error-minutes"></span></div>
+    <div class="base">
+      <main>
+        <section>
+          <h2>New Activity</h2>
         </section>
-        <section class="form-box">
-          <label>Seconds</label>
-          <input id="sec" onkeydown="return event.keyCode !== 69" type="number" min="0" max="59"/>
-          <div class=warn><img src="assets/warning.svg" alt="warning" class="warn-icon" id="warn-sec"><span id="error-seconds"></span><div>
-        </section>
-      </section>
-      <button class="formLog" id="submitter">START ACTIVITY</button>
-    </form>
-    <form class="show-timer">
-      <h4><h4>
-
-      <button id="new">CREATE NEW ACTIVITY</button>
-
-
-      <output></output>
-      <button id="start">START</button>
-      <br />
-      <button id="log">LOG ACTIVITY</button>
-
-
-    </form>
-    </main>
-    <aside>
-
-
-
-
-
-
-      <h2>Past Activities</h2>
-      <p class="sidebar"> You haven't logged any activities yet. Complete the form to the left to get started.</p>
-      <container id="card">
-
-      </container>
-
-
-
-
-
-    </aside>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </div>
+        <form class="hide-timer">
+          <p>Select a Category</p>
+          <ul>
+            <li class="study-2"><img class="study" src="assets/study.svg" alt="study icon">Study</li>
+            <li class="meditate-2"><img class="meditate" src="assets/meditate.svg" alt="meditate icon">Meditate</li>
+            <li class="exercise-2"><img class="exercise" src="assets/exercise.svg" alt="exercise icon">Exercise</li>
+          </ul>
+          <div class="warn"><img src="assets/warning.svg" alt="warning" class="warn-icon" id="warn-button"><span id="error-button"></span></div>
+          <label>What Would You Like to Accomplish During This Time?</label>
+          <input id="description" type="text" name="value" />
+          <div class="warn"><img src="assets/warning.svg" alt="warning" class="warn-icon" id="warn-description"><span id="error-description"></span></div>
+          <section id="time">
+            <section class="form-box">
+              <label>Minutes</label>
+              <input id="min" onkeydown="return event.keyCode !== 69" type="number" min="0" max="120"/>
+              <div class="warn"><img src="assets/warning.svg" alt="warning" class="warn-icon" id="warn-min"><span id="error-minutes"></span></div>
+            </section>
+            <section class="form-box">
+              <label>Seconds</label>
+              <input id="sec" onkeydown="return event.keyCode !== 69" type="number" min="0" max="59"/>
+              <div class=warn><img src="assets/warning.svg" alt="warning" class="warn-icon" id="warn-sec"><span id="error-seconds"></span><div>
+            </section>
+          </section>
+          <button class="form-log" id="submitter">START ACTIVITY</button>
+        </form>
+        <form class="show-timer">
+          <h4><h4>
+            <button id="new">CREATE NEW ACTIVITY</button>
+            <output></output>
+            <button id="start">START</button>
+            <br />
+            <button id="log">LOG ACTIVITY</button>
+        </form>
+      </main>
+      <aside>
+        <h2>Past Activities</h2>
+        <p class="sidebar"> You haven't logged any activities yet. Complete the form to the left to get started.</p>
+        <container id="card">
+        </container>
+      </aside>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>

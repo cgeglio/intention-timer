@@ -1,167 +1,118 @@
-//Activate Icons
+//Global Variables
+var descriptor = document.getElementById("description");
+var exercise = false;
+var log = false;
+var logger = document.getElementById("log");
+var meditate = false;
+var minutes = document.getElementById("min");
+var newAct = document.getElementById("new");
+var picExercise = document.querySelector(".exercise");
+var picMeditate = document.querySelector(".meditate");
+var picStudy = document.querySelector(".study");
+var seconds = document.getElementById("sec");
+var setTime = document.getElementById("submitter");
+var selectExercise = document.querySelector(".exercise-2");
+var selectStudy = document.querySelector(".study-2");
+var selectMeditate = document.querySelector(".meditate-2");
+var starter = document.getElementById("start");
+var study = false;
+var timeForm = document.querySelector(".hide-timer");
+var timerHeader = document.querySelector("h4");
+var timerShow = document.querySelector(".show-timer");
+var titleHeader = document.querySelector("output");
 
-var selectStudy = document.querySelector('.study2');
-var picStudy = document.querySelector('.study');
+// Event Listeners
+document.querySelector(".study").addEventListener("click", activeStudy);
+document.querySelector(".meditate").addEventListener("click", activeMeditate);
+document.querySelector(".exercise").addEventListener("click", activeExercise);
+document.querySelector(".study-2").addEventListener("click", studyClicked)
+document.querySelector(".meditate-2").addEventListener("click", meditateClicked)
+document.querySelector(".exercise-2").addEventListener("click", exerciseClicked)
+newAct.addEventListener("click", newForm);
+setTime.addEventListener("click", showDescrip);
+setTime.addEventListener("click", formValidation);
 
+// Selects Color for Icons and Timer
 function activeStudy() {
-  // var pic = document.querySelector('.study');
-  // var select = document.querySelector('.study2');
-  var timerBtn = document.querySelector("#start");
-  var titleHeader = document.querySelector("output");
-  var timerHeader = document.querySelector("h4");
-
   picStudy.src ="assets/study-active.svg";
   picStudy.classList.add("li-study");
   picStudy.classList.remove("study");
   selectStudy.classList.add("li-study");
   selectStudy.classList.remove("study");
-  // select.classList.add("li-study");
-  // select.classList.remove("study");
-
-
-
-
-
-
-
-
-  timerBtn.classList.add("timerStudy");
-  titleHeader.classList.add("timerHeader")
-  timerHeader.classList.add("timerHeader")
-  boxColor.classList.add("boxStudy");
+  starter.classList.add("timer-study");
+  titleHeader.classList.add("timer-header");
+  timerHeader.classList.add("timer-header");
 }
 
-var selectMeditate = document.querySelector('.meditate2');
-var picMeditate = document.querySelector('.meditate');
-// selectMeditate.classList.add("li-meditate");
-// selectMeditate.classList.remove("meditate");
-
 function activeMeditate() {
-  // var pic = document.querySelector('.meditate');
-  // var select = document.querySelector('.meditate2');
-  var timerBtn = document.querySelector("#start");
-  var titleHeader = document.querySelector("output");
-  var timerHeader = document.querySelector("h4");
-
   picMeditate.src = "assets/meditate-active.svg";
   picMeditate.classList.add("li-meditate");
   picMeditate.classList.remove("meditate");
   selectMeditate.classList.add("li-meditate");
   selectMeditate.classList.remove("meditate");
-  // select.classList.add("li-meditate");
-  // select.classList.remove("meditate");
-
-
-
-
-
-
-
-
-  timerBtn.classList.add("timerMeditate");
-  titleHeader.classList.add("timerHeader");
-  timerHeader.classList.add("timerHeader");
-  boxColor.classList.add("boxMeditate");
+  starter.classList.add("timer-meditate");
+  titleHeader.classList.add("timer-header");
+  timerHeader.classList.add("timer-header");
 }
 
-var selectExercise = document.querySelector('.exercise2');
-var picExercise = document.querySelector('.exercise');
-// selectExercise.classList.add("li-exercise");
-// selectExercise.classList.remove("exercise");
-
 function activeExercise() {
-  // var pic = document.querySelector('.exercise');
-  // var select = document.querySelector('.exercise2');
-  var timerBtn = document.querySelector("#start");
-  var titleHeader = document.querySelector("output");
-  var timerHeader = document.querySelector("h4");
-
   picExercise.src = "assets/exercise-active.svg";
   picExercise.classList.add("li-exercise");
   picExercise.classList.remove("exercise");
   selectExercise.classList.add("li-exercise");
   selectExercise.classList.remove("exercise");
-  // select.classList.add("li-exercise");
-  // select.classList.remove("exercise");
-
-
-
-
-
-
-
-
-  timerBtn.classList.add("timerExercise");
-  titleHeader.classList.add("timerHeader");
-  timerHeader.classList.add("timerHeader");
-  boxColor.classList.add("boxExercise");
+  starter.classList.add("timer-exercise");
+  titleHeader.classList.add("timer-header");
+  timerHeader.classList.add("timer-header");
 }
 
-document.querySelector('.study').addEventListener('click', activeStudy);
-document.querySelector('.meditate').addEventListener('click', activeMeditate);
-document.querySelector('.exercise').addEventListener('click', activeExercise);
 
 
-// get description to show above timer
-
-
-
-
-
-var setTime = document.getElementById('submitter');
-var descrip = document.querySelector('h4');
-var activity = document.getElementById('description');
-
+// Timer Description and Disable Unclicked Icons
 function showDescrip () {
-  descrip.innerText = activity.value;
-    out.innerText = (min.value<10 ? '0' + min.value : min.value) + ":" + (sec.value<10 ? '0' + sec.value : sec.value);
+  timerHeader.innerText = descriptor.value;
+    titleHeader.innerText = (min.value<10 ? "0" + min.value : min.value) + ":" + (sec.value<10 ? "0" + sec.value : sec.value);
+};
+function studyClicked () {
+  if (study = true){
+    selectMeditate.classList.add("disabled");
+    selectExercise.classList.add("disabled");
+  }
+};
+function meditateClicked() {
+  if (meditate = true){
+    selectStudy.classList.add("disabled");
+    selectExercise.classList.add("disabled");
+  }
+};
+function exerciseClicked() {
+  if (exercise = true){
+    selectMeditate.classList.add("disabled");
+    selectStudy.classList.add("disabled");
+  }
 };
 
-
-// setTime.addEventListener('click', showDescrip);
-// get error messages to show on all four
-
-
-
-
-
-
-var study = false;
-var meditate = false;
-var exercise = false;
-
-var descriptor = document.getElementById('description');
-var minutes = document.getElementById('min');
-var seconds = document.getElementById('sec');
-var error1 = document.getElementById('error-description');
-var error2 = document.getElementById('error-minutes');
-var error3 = document.getElementById('error-seconds');
-var error4 = document.getElementById('error-button');
-var warning1 = document.getElementById('warn-description');
-var warning2 = document.getElementById('warn-min');
-var warning3 = document.getElementById('warn-sec');
-var warning4 = document.getElementById('warn-button');
-var timeForm = document.querySelector('.hide-timer');
-var timerShow = document.querySelector('.show-timer');
-
+// Form Validation and Warning
 function formValidation () {
+  var error1 = document.getElementById("error-description");
+  var error2 = document.getElementById("error-minutes");
+  var error3 = document.getElementById("error-seconds");
+  var error4 = document.getElementById("error-button");
+  var warning1 = document.getElementById("warn-description");
+  var warning2 = document.getElementById("warn-min");
+  var warning3 = document.getElementById("warn-sec");
+  var warning4 = document.getElementById("warn-button");
   event.preventDefault();
     if (descriptor.value.length>0 && minutes.value.length>0 && seconds.value.length>0 && (study === true || meditate === true || exercise === true)) {
       timeForm.style.display = "none";
-
       logger.style.visibility = "visible";
       starter.style.visibility = "visible";
-      descrip.style.visibility = "visible";
-      out.style.visibility = "visible";
+      timerHeader.style.visibility = "visible";
+      titleHeader.style.visibility = "visible";
       timerShow.style.display = "flex";
-
       function showDescrip () {
-        descrip.innerText = activity.value;
+        descrip.innerText = descriptor.value;
       };
-
-
-
-
     }
     if (descriptor.value.length<1) {
         error1.innerText = "A Description is Required.";
@@ -181,111 +132,84 @@ function formValidation () {
     }
   };
 
-function studyClicked () {
-  study = true
-};
-function meditateClicked() {
-  meditate = true
-};
-function exerciseClicked() {
-  exercise = true
-};
+// Timer Random Messaging
+var message = Array(
+  "Great Job!",
+  "You Did It!",
+  "Nice Work!",
+  "Fantastic!",
+  "Try Harder",
+  "Good Effort",
+)
 
+function randomMessage () {
+  var randomMessage =
+    message[Math.floor(Math.random() * message.length)];
+      starter.innerText = randomMessage;
+}
 
-document.querySelector('.study2').addEventListener('click', studyClicked)
-document.querySelector('.meditate2').addEventListener('click', meditateClicked)
-document.querySelector('.exercise2').addEventListener('click', exerciseClicked)
-
-
-
-setTime.addEventListener('click', showDescrip);
-setTime.addEventListener('click', formValidation);
-
-// gets timer to work
-var out = document.querySelector('output');
-var min = document.getElementById('min');
-var sec = document.getElementById('sec');
-var starter = document.getElementById('start');
-
-starter.addEventListener('click', function(){
-  var userMin = min.value;
-  var	userSec = sec.value;
+//Timer Fucntionality
+starter.addEventListener("click", function(){
+  var userMin = minutes.value;
+  var	userSec = seconds.value;
   logger.disabled = true;
 	timer = function(){
     starter.disabled = true;
 		if(userMin>0){
 			if(userSec>0){
 					userSec--;
-				}
-        // -- = decrement
-				else{
+				} else {
 					userMin--;
 					userSec = 59;
 				}
-				out.value = (userMin<10 ? '0' + userMin : userMin) + ":" + (userSec<10 ? '0' + userSec : userSec);
+				titleHeader.value = (userMin<10 ? "0" + userMin : userMin) + ":" + (userSec<10 ? "0" + userSec : userSec);
         setTimeout("timer()", 1000);
-			}
-// sets timeout built in method- takes function and how long you want it to wait miliseconds
-      // ? represents an if else if true, do this, if not (represented by :) then do this
-			else{
-				if(userSec>0){
-					userSec--;
-					out.value = "00:" + (userSec<10 ? '0' + userSec : userSec);
-					setTimeout("timer()", 1000);
-				}
-        if(userSec===0){
-          starter.innerHTML = "Great Job!";
-          logger.disabled = false;
-      }
-			}
+			  } else {
+				  if(userSec>0){
+					  userSec--;
+					  titleHeader.value = "00:" + (userSec<10 ? "0" + userSec : userSec);
+					  setTimeout("timer()", 1000);
+				    }
+          if(userSec===0){
+            logger.disabled = false;
+            randomMessage();
+            }
+			 }
 		}
-
 		timer();
-
 	});
 
-
-
-
-
-var logger = document.getElementById('log');
-var showCard = document.getElementById('card');
-var sideP = document.querySelector('.sidebar')
-var cardAct = document.querySelector('.cardActivity');
-var cardTime = document.querySelector('.cardTime');
-var cardChoice = document.querySelector('.cardChoice');
-var cardMins = document.getElementById('cardMins');
-var cardSecs = document.getElementById('cardSecs');
-var newAct = document.getElementById('new');
-
-var log = false;
-
+// Past Activity Cards Creation and Appearance
 function logClicked () {
   log = true
 };
+function addBox() {
 
-logger.addEventListener('click', logClicked);
-logger.addEventListener('click', createCard);
-logger.addEventListener('click', newInput);
+  var boxColor= document.querySelector(".box")
+  boxColor.classList.add("box-study");
+}
+logger.addEventListener("click", logClicked);
+logger.addEventListener("click", createCard);
+logger.addEventListener("click", newInput);
+logger.addEventListener("click", addBox);
 
 function newInput () {
-    event.preventDefault();
-   var plusCard = document.createElement("div");
-   plusCard.className = 'newcard';
-   document.getElementsByTagName('aside')[0].appendChild(plusCard);
+  event.preventDefault();
+  var plusCard = document.createElement("div");
+   plusCard.className = "new-card";
+   document.getElementsByTagName("aside")[0].appendChild(plusCard);
 
-   var userMin = min.value;
-   var userSec = sec.value;
-
+   var userMin = minutes.value;
+   var userSec = seconds.value;
    var cardChoice = (study===true ? "Study" : meditate===true ? "Meditate" : exercise===true ? "Exercise" : "");
-
-   var totalTime = (userMin<10 ? '0' + userMin : userMin) + " MIN " + (userSec<10 ? '0' + userSec : userSec) + " SECONDS";
+   var totalTime = (userMin<10 ? "0" + userMin : userMin) + " MIN " + (userSec<10 ? "0" + userSec : userSec) + " SECONDS";
    plusCard.innerHTML = (`${cardChoice}`) + "<br />" + (`${totalTime}`) + "<br />" + (`${descriptor.value}`);
 };
 
-
 function createCard () {
   event.preventDefault();
+  var showCard = document.getElementById("card");
+  var sideP = document.querySelector(".sidebar");
      if (log === true) {
        showCard.style.display = "block";
        sideP.style.display = "none";
@@ -295,15 +219,14 @@ function createCard () {
        starter.innerHTML = "Start";
        starter.disabled = false;
        starter.style.visibility = "hidden";
-       descrip.style.visibility = "hidden";
-       out.style.visibility = "hidden";
+       timerHeader.style.visibility = "hidden";
+       titleHeader.style.visibility = "hidden";
      } else {
        showCard.style.display = "none";
      }
 };
 
-newAct.addEventListener('click', newForm);
-
+//Resetting Form on Landing Page
 function newForm () {
   event.preventDefault();
   timeForm.style.display = "block";
@@ -311,7 +234,6 @@ function newForm () {
   newAct.style.visibility = "hidden";
   timerShow.style.display = "none";
   log === false;
-
   if (study === true) {
     selectStudy.classList.remove("li-study");
     selectStudy.classList.add("study");
@@ -331,26 +253,3 @@ function newForm () {
     meditate === false;
   }
 };
-
-
-
-
-
-// function hideForm () {
-//     event.preventDefault();
-//     var timeForm = document.querySelector('form');
-//     if (timeForm.style.display === "none") {
-//       timeForm.style.display = "block";
-//     } else {
-//       timeForm.style.display = "none";
-//     }
-//
-
-
-// class Card {
-//   constructor(time, category, description) {
-//     this.time = time;
-//     this.category = category;
-//     this.description = description;
-//   }
-// };
