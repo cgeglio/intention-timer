@@ -94,6 +94,7 @@ function exerciseClicked() {
 
 // Form Validation and Warning
 function formValidation () {
+  var letters = "[A-Za-z ]";
   var error1 = document.getElementById("error-description");
   var error2 = document.getElementById("error-minutes");
   var error3 = document.getElementById("error-seconds");
@@ -103,7 +104,7 @@ function formValidation () {
   var warning3 = document.getElementById("warn-sec");
   var warning4 = document.getElementById("warn-button");
   event.preventDefault();
-    if (descriptor.value.length>0 && minutes.value.length>0 && seconds.value.length>0 && (study === true || meditate === true || exercise === true)) {
+    if (descriptor.value.length>0 && descriptor.value.match(letters) && minutes.value.length>0 && seconds.value.length>0 && (study === true || meditate === true || exercise === true)) {
       timeForm.style.display = "none";
       logger.style.visibility = "visible";
       starter.style.visibility = "visible";
@@ -115,9 +116,9 @@ function formValidation () {
         descrip.innerText = descriptor.value;
       };
     }
-    if (descriptor.value.length<1) {
-        error1.innerText = "A Description is Required.";
-        warning1.style.visibility = "visible";
+    if (descriptor.value.length<1 || !descriptor.value.match(letters)) {
+      error1.innerText = "A Valid Description is Required.";
+      warning1.style.visibility = "visible";
     }
     if (minutes.value.length<1) {
         error2.innerText = "Please Enter Number of Minutes.";
