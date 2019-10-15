@@ -38,6 +38,7 @@ setTime.addEventListener("click", formValidation);
 // Selects Color for Icons and Timer
 function activeStudy() {
   event.preventDefault();
+  debugger
   // boxColor.classList.add("box-study");
   currentCategory.classList.add("box-study");
   picStudy.src ="assets/study-active.svg";
@@ -53,6 +54,7 @@ function activeStudy() {
 
 function activeMeditate() {
   event.preventDefault();
+  currentCategory.classList.add("box-meditate");
   picMeditate.src = "assets/meditate-active.svg";
   picMeditate.classList.add("li-meditate");
   picMeditate.classList.remove("meditate");
@@ -65,6 +67,7 @@ function activeMeditate() {
 
 function activeExercise() {
   event.preventDefault();
+  currentCategory.classList.add("box-exercise");
   picExercise.src = "assets/exercise-active.svg";
   picExercise.classList.add("li-exercise");
   picExercise.classList.remove("exercise");
@@ -198,7 +201,7 @@ function newInput () {
   debugger
   event.preventDefault();
   var plusCard = document.createElement("div");
-  // var boxColor = document.getElementsByClassName("new-card");
+  var boxColor = document.getElementsByClassName("new-card");
    plusCard.className = "new-card";
    document.getElementsByTagName("aside")[0].appendChild(plusCard);
 
@@ -216,25 +219,14 @@ function newInput () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 // WORK HERRE TONIGHT
     var cardColor;
     if (study === true) {
     cardColor = "box-study"
     } else if (meditate === true) {
-    cardColor.classList.add("box-meditate");
+    cardColor = "box-meditate"
     } else if (exercise === true) {
-    cardColor.classList.add("box-exercise");
+    cardColor = "box-exercise"
     }
 
 
@@ -244,7 +236,7 @@ function newInput () {
 
 plusCard.innerHTML += `
   <div>
-   <div id="${cardColor}">KKKKLLL</div>
+   <div id="${cardColor}"></div>
    <p>${cardChoice}</p>
    <p>${totalTime}</p>
    <p>${descriptor.value}</p>

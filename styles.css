@@ -73,7 +73,7 @@ aside {
   padding-bottom: 20px;
 }
 
-button {
+#padding {
   align-items: center;
   border: solid 3px;
   border-radius: 5px;
@@ -92,26 +92,22 @@ button {
 .exercise,
 .exercise-2 {
   color: #fff;
-  height: 45%;
   width: 23%;
   background-color: rgba(0, 0, 0, 0);
 }
 
 .li-study{
   color: #B3FD78;
-  height: 45%;
   width: 23%;
 }
 
 .li-meditate{
   color: #C278FD;
-  height: 45%;
   width: 23%;
 }
 
 .li-exercise{
   color: #FD8078;
-  height: 45%;
   width: 23%;
 }
 
@@ -321,14 +317,6 @@ h5{
   padding-top: 5px;
 }
 
-/* .box {
-  border-radius: 3px;
-  /* background-color: #fff; */
-  content: "";
-  float: right;
-  height: 30px;
-  width: 4px;
-} */
 
 #box-study {
   border-radius: 3px;
@@ -341,22 +329,22 @@ h5{
 
 .box-meditate{
   border-radius: 3px;
-  /* background-color: #fff; */
+  background-color: #C278FD;
   content: "";
   float: right;
   height: 30px;
   width: 4px;
-  background-color: #C278FD;
+
 }
 
 .box-exercise{
   border-radius: 3px;
-  /* background-color: #fff; */
+  background-color: #FD8078;
   content: "";
   float: right;
   height: 30px;
   width: 4px;
-  background-color: #FD8078;
+
 }
 
 /* for tablet devices */
