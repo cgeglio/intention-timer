@@ -327,7 +327,7 @@ h5{
   width: 4px;
 }
 
-.box-meditate{
+#box-meditate{
   border-radius: 3px;
   background-color: #C278FD;
   content: "";
@@ -337,7 +337,7 @@ h5{
 
 }
 
-.box-exercise{
+#box-exercise{
   border-radius: 3px;
   background-color: #FD8078;
   content: "";
