@@ -110,6 +110,7 @@ function formValidation () {
       timerHeader.style.visibility = "visible";
       titleHeader.style.visibility = "visible";
       timerShow.style.display = "flex";
+      logger.disabled = true;
       function showDescrip () {
         descrip.innerText = descriptor.value;
       };
@@ -132,30 +133,19 @@ function formValidation () {
     }
   };
 
-// Timer Random Messaging
-var message = Array(
-  "Great Job!",
-  "You Did It!",
-  "Nice Work!",
-  "Fantastic!",
-  "Try Harder",
-  "Good Effort",
-)
-
-function randomMessage () {
-  if (starter.innerText !== "START") {
-  var randomMessage =
-    message[Math.floor(Math.random() * message.length)];
-      starter.innerText = randomMessage;
-
-  }
-}
-
-//Timer Fucntionality
+//Timer Fucntionality and Random Messaging
 starter.addEventListener("click", function(){
   var userMin = minutes.value;
   var	userSec = seconds.value;
-  logger.disabled = true;
+  var messageChoice = Array(
+    "Great Job!",
+    "You Did It!",
+    "Nice Work!",
+    "Fantastic!",
+    "Try Harder",
+    "Good Effort",
+  )
+  var message = messageChoice[Math.floor(Math.random() * messageChoice.length)];
 	timer = function(){
     starter.disabled = true;
 		if(userMin>0){
@@ -175,7 +165,7 @@ starter.addEventListener("click", function(){
 				    }
           if(userSec===0){
             logger.disabled = false;
-            randomMessage();
+            starter.innerText = message;
             }
 			 }
 		}
