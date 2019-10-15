@@ -94,6 +94,7 @@ function exerciseClicked() {
 
 // Form Validation and Warning
 function formValidation () {
+  var letters = "^[a-zA-Z,.!? ]*$";
   var error1 = document.getElementById("error-description");
   var error2 = document.getElementById("error-minutes");
   var error3 = document.getElementById("error-seconds");
@@ -103,20 +104,21 @@ function formValidation () {
   var warning3 = document.getElementById("warn-sec");
   var warning4 = document.getElementById("warn-button");
   event.preventDefault();
-    if (descriptor.value.length>0 && minutes.value.length>0 && seconds.value.length>0 && (study === true || meditate === true || exercise === true)) {
+    if (descriptor.value.length>0 && descriptor.value.match(letters) && minutes.value.length>0 && seconds.value.length>0 && (study === true || meditate === true || exercise === true)) {
       timeForm.style.display = "none";
       logger.style.visibility = "visible";
       starter.style.visibility = "visible";
       timerHeader.style.visibility = "visible";
       titleHeader.style.visibility = "visible";
       timerShow.style.display = "flex";
+      logger.disabled = true;
       function showDescrip () {
         descrip.innerText = descriptor.value;
       };
     }
-    if (descriptor.value.length<1) {
-        error1.innerText = "A Description is Required.";
-        warning1.style.visibility = "visible";
+    if (descriptor.value.length<1 || !descriptor.value.match(letters)) {
+      error1.innerText = "A Valid Description is Required.";
+      warning1.style.visibility = "visible";
     }
     if (minutes.value.length<1) {
         error2.innerText = "Please Enter Number of Minutes.";
@@ -132,30 +134,19 @@ function formValidation () {
     }
   };
 
-// Timer Random Messaging
-var message = Array(
-  "Great Job!",
-  "You Did It!",
-  "Nice Work!",
-  "Fantastic!",
-  "Try Harder",
-  "Good Effort",
-)
-
-function randomMessage () {
-  if (starter.innerText !== "START") {
-  var randomMessage =
-    message[Math.floor(Math.random() * message.length)];
-      starter.innerText = randomMessage;
-
-  }
-}
-
-//Timer Fucntionality
+//Timer Fucntionality and Random Messaging
 starter.addEventListener("click", function(){
   var userMin = minutes.value;
   var	userSec = seconds.value;
-  logger.disabled = true;
+  var messageChoice = Array(
+    "Great Job!",
+    "You Did It!",
+    "Nice Work!",
+    "Fantastic!",
+    "Try Harder",
+    "Good Effort",
+  )
+  var message = messageChoice[Math.floor(Math.random() * messageChoice.length)];
 	timer = function(){
     starter.disabled = true;
 		if(userMin>0){
@@ -175,7 +166,7 @@ starter.addEventListener("click", function(){
 				    }
           if(userSec===0){
             logger.disabled = false;
-            randomMessage();
+            starter.innerText = message;
             }
 			 }
 		}
@@ -242,18 +233,24 @@ function newForm () {
   timerShow.style.display = "none";
   log === false;
   if (study === true) {
+    selectMeditate.classList.remove("disabled");
+    selectExercise.classList.remove("disabled");
     selectStudy.classList.remove("li-study");
     selectStudy.classList.add("study");
     picStudy.src ="assets/study.svg";
     study === false;
   }
   if (exercise === true) {
+    selectMeditate.classList.remove("disabled");
+    selectStudy.classList.remove("disabled");
     selectExercise.classList.remove("li-exercise");
     selectExercise.classList.add("exercise");
     picExercise.src = "assets/exercise.svg";
     exercise === false;
   }
   if (meditate === true) {
+    selectStudy.classList.remove("disabled");
+    selectExercise.classList.remove("disabled");
     selectMeditate.classList.remove("li-meditate");
     selectMeditate.classList.add("meditate");
     picMeditate.src = "assets/meditate.svg";
