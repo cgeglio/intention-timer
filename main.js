@@ -94,7 +94,7 @@ function exerciseClicked() {
 
 // Form Validation and Warning
 function formValidation () {
-  var letters = "[A-Za-z ]";
+  var letters = "^[a-zA-Z,.!? ]*$";
   var error1 = document.getElementById("error-description");
   var error2 = document.getElementById("error-minutes");
   var error3 = document.getElementById("error-seconds");
