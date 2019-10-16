@@ -104,11 +104,17 @@ function exerciseClicked() {
 
 function starterColor() {
 if (study === true) {
-    starter.classList = "timer-study";
-} else if (meditate === true) {
-    starter.classList = "timer-meditate";
-} else if (exercise === true) {
-  starter.classList = "timer-exercise";
+    starter.classList.add("timer-study");
+    starter.classList.remove("timer-meditate");
+    starter.classList.remove("timer-exercise");}
+if (meditate === true) {
+    starter.classList.add("timer-meditate");
+    starter.classList.remove("timer-study");
+    starter.classList.remove("timer-exercise");}
+if (exercise === true) {
+  starter.classList.add("timer-exercise");
+  starter.classList.remove("timer-meditate");
+  starter.classList.remove("timer-study");
 }};
 
 // Form Validation and Warning
@@ -148,7 +154,6 @@ function formValidation () {
     logger.style.visibility = "visible";
     logger.disabled = true;
     starter.style.visibility = "visible";
-    starter.classList = null;
     starterColor();
     timerHeader.style.visibility = "visible";
     titleHeader.style.visibility = "visible";
@@ -212,25 +217,34 @@ function newInput () {
 
    var userMin = minutes.value;
    var userSec = seconds.value;
-    var cardChoice;
-    if (study === true) {
-      cardChoice = 'Study'
-    } else if (meditate === true) {
-      cardChoice = 'Meditate'
-    } else if (exercise === true) {
-     cardChoice = 'Exercise'
-    }
 
+  var cardChoice;
+  if (study === true) {
+    cardChoice = 'Study'
+  };
+  if (meditate === true) {
+    cardChoice = 'Meditate'
+  };
+  if (exercise === true) {
+   cardChoice = 'Exercise'
+  };
 
-    var cardColor;
-
-    if (study === true) {
-    cardColor = "box-study"
-    } else if (meditate === true) {
-    cardColor = "box-meditate";
-    } else if (exercise === true) {
-    cardColor = "box-exercise";
-    }
+  var cardColor;
+  if (study === true) {
+  cardColor = "box-study";
+  cardColor !== "box-meditate";
+  cardColor !== "box-exercise";
+  };
+  if (meditate === true) {
+  cardColor = "box-meditate";
+  cardColor !== "box-study";
+  cardColor !== "box-exercise";
+  };
+  if (exercise === true) {
+  cardColor = "box-exercise";
+  cardColor !== "box-meditate";
+  cardColor !== "box-study";
+  };
 
   var totalTime = (userMin<10 ? "0" + userMin : userMin) + " MIN " + (userSec<10 ? "0" + userSec : userSec) + " SECONDS";
 
