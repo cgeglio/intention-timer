@@ -131,6 +131,7 @@ function formValidation() {
   var warning3 = document.getElementById("warn-sec");
   var warning4 = document.getElementById("warn-button");
   event.preventDefault();
+  
   if (
     descriptor.value.length > 0 &&
     descriptor.value.match(letters) &&
@@ -258,16 +259,17 @@ function newInput() {
     (userSec < 10 ? "0" + userSec : userSec) +
     " SECONDS";
 
-  plusCard.innerHTML += `
-      <div>
-       <div id="${cardColor}"></div>
-       <p>${cardChoice}</p>
-       <p>${totalTime}</p>
-       <p>${descriptor.value}</p>
-      </div>`;
-}
+plusCard.innerHTML += `
+  <div>
+   <div id="${cardColor}"></div>
+   <p>${cardChoice}</p>
+   <p>${totalTime}</p>
+   <p>${descriptor.value}</p>
+   <button id="heart-button">⭐</button>
+  </div>`;
+};
 
-function createCard() {
+function createCard () {
   event.preventDefault();
   var showCard = document.getElementById("card");
   var sideP = document.querySelector(".sidebar");
