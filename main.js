@@ -1,4 +1,5 @@
 //Global Variables
+var beep = beep beep
 var currentCategory = document.getElementById("card");
 var descriptor = document.getElementById("description");
 var exercise = false;
@@ -131,7 +132,7 @@ function formValidation() {
   var warning3 = document.getElementById("warn-sec");
   var warning4 = document.getElementById("warn-button");
   event.preventDefault();
-  
+
   if (
     descriptor.value.length > 0 &&
     descriptor.value.match(letters) &&
