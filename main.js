@@ -38,7 +38,6 @@ setTime.addEventListener("click", formValidation);
 // Selects Color for Icons and Timer
 function activeStudy() {
   event.preventDefault();
-  debugger
   // boxColor.classList.add("box-study");
   currentCategory.classList.add("box-study");
   picStudy.src ="assets/study-active.svg";
@@ -46,7 +45,7 @@ function activeStudy() {
   picStudy.classList.remove("study");
   selectStudy.classList.add("li-study");
   selectStudy.classList.remove("study");
-  starter.classList.add("timer-study");
+  // starter.classList.add("timer-study");
   titleHeader.classList.add("timer-header");
   timerHeader.classList.add("timer-header");
 
@@ -54,26 +53,24 @@ function activeStudy() {
 
 function activeMeditate() {
   event.preventDefault();
-  currentCategory.classList.add("box-meditate");
   picMeditate.src = "assets/meditate-active.svg";
   picMeditate.classList.add("li-meditate");
   picMeditate.classList.remove("meditate");
   selectMeditate.classList.add("li-meditate");
   selectMeditate.classList.remove("meditate");
-  starter.classList.add("timer-meditate");
+  // starter.classList.add("timer-meditate");
   titleHeader.classList.add("timer-header");
   timerHeader.classList.add("timer-header");
 }
 
 function activeExercise() {
   event.preventDefault();
-  currentCategory.classList.add("box-exercise");
   picExercise.src = "assets/exercise-active.svg";
   picExercise.classList.add("li-exercise");
   picExercise.classList.remove("exercise");
   selectExercise.classList.add("li-exercise");
   selectExercise.classList.remove("exercise");
-  starter.classList.add("timer-exercise");
+  // starter.classList.add("timer-exercise");
   titleHeader.classList.add("timer-header");
   timerHeader.classList.add("timer-header");
 }
@@ -107,6 +104,15 @@ function exerciseClicked() {
   }
 };
 
+function starterColor() {
+if (study === true) {
+    starter.classList = "timer-study";
+} else if (meditate === true) {
+    starter.classList = "timer-meditate";
+} else if (exercise === true) {
+  starter.classList = "timer-exercise";
+}};
+
 // Form Validation and Warning
 function formValidation () {
   var letters = "^[a-zA-Z,.!? ]*$";
@@ -121,12 +127,6 @@ function formValidation () {
   event.preventDefault();
     if (descriptor.value.length>0 && descriptor.value.match(letters) && minutes.value.length>0 && seconds.value.length>0 && (study === true || meditate === true || exercise === true)) {
       timeForm.style.display = "none";
-      logger.style.visibility = "visible";
-      starter.style.visibility = "visible";
-      timerHeader.style.visibility = "visible";
-      titleHeader.style.visibility = "visible";
-      timerShow.style.display = "flex";
-      logger.disabled = true;
       function showDescrip () {
         descrip.innerText = descriptor.value;
       };
@@ -147,6 +147,14 @@ function formValidation () {
       error4.innerText = "Please Select an Activity.";
       warning4.style.visibility = "visible";
     }
+    logger.style.visibility = "visible";
+    logger.disabled = true;
+    starter.style.visibility = "visible";
+    starter.classList = null;
+    starterColor();
+    timerHeader.style.visibility = "visible";
+    titleHeader.style.visibility = "visible";
+    timerShow.style.display = "flex";
   };
 
 //Timer Fucntionality and Random Messaging
@@ -198,10 +206,9 @@ logger.addEventListener("click", createCard);
 logger.addEventListener("click", newInput);
 
 function newInput () {
-  debugger
   event.preventDefault();
   var plusCard = document.createElement("div");
-  var boxColor = document.getElementsByClassName("new-card");
+  // var boxColor = document.getElementsByClassName("new-card");
    plusCard.className = "new-card";
    document.getElementsByTagName("aside")[0].appendChild(plusCard);
 
@@ -219,14 +226,25 @@ function newInput () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 // WORK HERRE TONIGHT
-    var cardColor;
+    var cardColor = null;
     if (study === true) {
     cardColor = "box-study"
     } else if (meditate === true) {
-    cardColor = "box-meditate"
+    cardColor = "box-meditate";
     } else if (exercise === true) {
-    cardColor = "box-exercise"
+    cardColor = "box-exercise";
     }
 
 
