@@ -1,5 +1,4 @@
 //Global Variables
-// var boxColor = document.getElementById("card");
 // var currentCategory = null;
 var currentCategory = document.getElementById("card");
 var descriptor = document.getElementById("description");
@@ -38,8 +37,6 @@ setTime.addEventListener("click", formValidation);
 // Selects Color for Icons and Timer
 function activeStudy() {
   event.preventDefault();
-  debugger
-  // boxColor.classList.add("box-study");
   currentCategory.classList.add("box-study");
   picStudy.src ="assets/study-active.svg";
   picStudy.classList.add("li-study");
@@ -49,7 +46,6 @@ function activeStudy() {
   starter.classList.add("timer-study");
   titleHeader.classList.add("timer-header");
   timerHeader.classList.add("timer-header");
-
 }
 
 function activeMeditate() {
@@ -198,7 +194,6 @@ logger.addEventListener("click", createCard);
 logger.addEventListener("click", newInput);
 
 function newInput () {
-  debugger
   event.preventDefault();
   var plusCard = document.createElement("div");
   var boxColor = document.getElementsByClassName("new-card");
@@ -216,10 +211,6 @@ function newInput () {
      cardChoice = 'Exercise'
     }
 
-
-
-
-// WORK HERRE TONIGHT
     var cardColor;
     if (study === true) {
     cardColor = "box-study"
@@ -228,8 +219,6 @@ function newInput () {
     } else if (exercise === true) {
     cardColor = "box-exercise"
     }
-
-
 
   var totalTime = (userMin<10 ? "0" + userMin : userMin) + " MIN " + (userSec<10 ? "0" + userSec : userSec) + " SECONDS";
 
