@@ -249,14 +249,15 @@ function newInput () {
   var totalTime = (userMin<10 ? "0" + userMin : userMin) + " MIN " + (userSec<10 ? "0" + userSec : userSec) + " SECONDS";
 
 
-plusCard.innerHTML += `
-  <div>
-   <div id="${cardColor}"></div>
-   <p>${cardChoice}</p>
-   <p>${totalTime}</p>
-   <p>${descriptor.value}</p>
-  </div>`;
-};
+  plusCard.innerHTML += `
+    <div>
+     <div id="${cardColor}"></div>
+     <p>${cardChoice}</p>
+     <p>${totalTime}</p>
+     <p>${descriptor.value}</p>
+     <button id="heart-button">⭐</button>
+    </div>`;
+  };
 
 function createCard () {
   event.preventDefault();
