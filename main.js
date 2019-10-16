@@ -1,5 +1,4 @@
 //Global Variables
-// var boxColor = document.getElementById("card");
 // var currentCategory = null;
 var currentCategory = document.getElementById("card");
 var descriptor = document.getElementById("description");
@@ -38,7 +37,7 @@ setTime.addEventListener("click", formValidation);
 // Selects Color for Icons and Timer
 function activeStudy() {
   event.preventDefault();
-  // boxColor.classList.add("box-study");
+
   currentCategory.classList.add("box-study");
   picStudy.src ="assets/study-active.svg";
   picStudy.classList.add("li-study");
@@ -48,7 +47,6 @@ function activeStudy() {
   // starter.classList.add("timer-study");
   titleHeader.classList.add("timer-header");
   timerHeader.classList.add("timer-header");
-
 }
 
 function activeMeditate() {
@@ -224,21 +222,8 @@ function newInput () {
     }
 
 
+    var cardColor;
 
-
-
-
-
-
-
-
-
-
-
-
-
-// WORK HERRE TONIGHT
-    var cardColor = null;
     if (study === true) {
     cardColor = "box-study"
     } else if (meditate === true) {
@@ -246,8 +231,6 @@ function newInput () {
     } else if (exercise === true) {
     cardColor = "box-exercise";
     }
-
-
 
   var totalTime = (userMin<10 ? "0" + userMin : userMin) + " MIN " + (userSec<10 ? "0" + userSec : userSec) + " SECONDS";
 

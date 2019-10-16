@@ -356,16 +356,32 @@ h5{
     margin-right: 20px;
   }
 
+  header {
+    width: 100%;
+  }
+
   main {
     display: flex;
     width: 100%;
   }
-  ul {
+  .ul {
     align-content: center;
     display: block;
     flex-direction: column;
     justify-content: flex-start;
     padding-bottom: 10px;
+  }
+
+  #padding {
+    border: solid 3px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 70px;
+    align-items: center;
+    list-style: none;
+    padding-top: 0px;
+    width: 90%;
   }
 
   aside {
@@ -376,17 +392,20 @@ h5{
     width: 100%;
   }
 
+  .study,
+  .meditate,
+  .exercise,
   .study-2,
   .meditate-2,
   .exercise-2 {
     height: 45px;
-    margin-left: 20%;
     width: 55%;
   }
 
   .li-study,
   .li-meditate,
   .li-exercise {
+    height: 45px;
     width: 55%;
   }
 
@@ -418,12 +437,24 @@ h5{
     flex-direction: column;
     width: auto;
   }
-  ul {
+  .ul {
     align-content: center;
     display: block;
     flex-direction: column;
     justify-content: flex-start;
     padding-bottom: 10px;
+  }
+
+  #padding {
+    border: solid 3px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 70px;
+    align-items: center;
+    list-style: none;
+    padding-top: 0px;
+    width: 90%;
   }
 
   aside {
@@ -434,16 +465,21 @@ h5{
     width: 100%;
   }
 
+  .study,
+  .meditate,
+  .exercise,
   .study-2,
   .meditate-2,
   .exercise-2 {
     height: 45px;
     width: 80%;
+    padding-top: 5px;
   }
 
   .li-study,
   .li-meditate,
   .li-exercise {
+    height: 45px;
     width: 80%;
   }
 
