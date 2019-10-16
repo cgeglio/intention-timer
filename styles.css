@@ -334,7 +334,6 @@ h5{
   float: right;
   height: 30px;
   width: 4px;
-
 }
 
 #box-exercise{
@@ -344,7 +343,27 @@ h5{
   float: right;
   height: 30px;
   width: 4px;
+}
 
+#heart-button {
+  background-color: #46424D;
+  border-radius: 19px;
+  width: 35px;
+  height: 35px;
+  float: right;
+  content: "";
+  margin-top: -24px;
+  border: solid 0px;
+  font-size: 16pt;
+}
+
+#heart-button:active {
+  background-color: #FCBE24;
+}
+
+.hide {
+  float: right;
+  /* display: none; */
 }
 
 /* for tablet devices */

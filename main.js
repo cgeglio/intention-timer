@@ -125,9 +125,9 @@ function formValidation () {
   event.preventDefault();
     if (descriptor.value.length>0 && descriptor.value.match(letters) && minutes.value.length>0 && seconds.value.length>0 && (study === true || meditate === true || exercise === true)) {
       timeForm.style.display = "none";
-      function showDescrip () {
-        descrip.innerText = descriptor.value;
-      };
+      // function showDescrip () {
+      //   descrip.innerText = descriptor.value;
+      // };
     }
     if (descriptor.value.length<1 || !descriptor.value.match(letters)) {
       error1.innerText = "A Valid Description is Required.";
@@ -150,6 +150,8 @@ function formValidation () {
     starter.style.visibility = "visible";
     starter.classList = null;
     starterColor();
+    starter.diabled = false;
+    starter.innerText = "Start!";
     timerHeader.style.visibility = "visible";
     titleHeader.style.visibility = "visible";
     timerShow.style.display = "flex";
@@ -232,6 +234,7 @@ function newInput () {
     cardColor = "box-exercise";
     }
 
+
   var totalTime = (userMin<10 ? "0" + userMin : userMin) + " MIN " + (userSec<10 ? "0" + userSec : userSec) + " SECONDS";
 
 
@@ -241,8 +244,10 @@ plusCard.innerHTML += `
    <p>${cardChoice}</p>
    <p>${totalTime}</p>
    <p>${descriptor.value}</p>
+   <button id="heart-button">⭐</button>
   </div>`;
 };
+
 
 function createCard () {
   event.preventDefault();
