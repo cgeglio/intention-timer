@@ -1,5 +1,4 @@
 //Global Variables
-// var currentCategory = null;
 var currentCategory = document.getElementById("card");
 var descriptor = document.getElementById("description");
 var exercise = false;
@@ -30,6 +29,9 @@ document.querySelector(".exercise-2").addEventListener("click", activeExercise);
 document.querySelector(".study-2").addEventListener("click", studyClicked);
 document.querySelector(".meditate-2").addEventListener("click", meditateClicked);
 document.querySelector(".exercise-2").addEventListener("click", exerciseClicked);
+logger.addEventListener("click", logClicked);
+logger.addEventListener("click", createCard);
+logger.addEventListener("click", newInput);
 newAct.addEventListener("click", newForm);
 setTime.addEventListener("click", showDescrip);
 setTime.addEventListener("click", formValidation);
@@ -37,14 +39,12 @@ setTime.addEventListener("click", formValidation);
 // Selects Color for Icons and Timer
 function activeStudy() {
   event.preventDefault();
-
   currentCategory.classList.add("box-study");
   picStudy.src ="assets/study-active.svg";
   picStudy.classList.add("li-study");
   picStudy.classList.remove("study");
   selectStudy.classList.add("li-study");
   selectStudy.classList.remove("study");
-  // starter.classList.add("timer-study");
   titleHeader.classList.add("timer-header");
   timerHeader.classList.add("timer-header");
 }
@@ -56,7 +56,6 @@ function activeMeditate() {
   picMeditate.classList.remove("meditate");
   selectMeditate.classList.add("li-meditate");
   selectMeditate.classList.remove("meditate");
-  // starter.classList.add("timer-meditate");
   titleHeader.classList.add("timer-header");
   timerHeader.classList.add("timer-header");
 }
@@ -68,7 +67,6 @@ function activeExercise() {
   picExercise.classList.remove("exercise");
   selectExercise.classList.add("li-exercise");
   selectExercise.classList.remove("exercise");
-  // starter.classList.add("timer-exercise");
   titleHeader.classList.add("timer-header");
   timerHeader.classList.add("timer-header");
 }
@@ -78,7 +76,7 @@ function activeExercise() {
 // Timer Description and Disable Unclicked Icons
 function showDescrip () {
   timerHeader.innerText = descriptor.value;
-    titleHeader.innerText = (min.value<10 ? "0" + min.value : min.value) + ":" + (sec.value<10 ? "0" + sec.value : sec.value);
+  titleHeader.innerText = (min.value<10 ? "0" + min.value : min.value) + ":" + (sec.value<10 ? "0" + sec.value : sec.value);
 };
 function studyClicked () {
   if (study = true){
@@ -204,14 +202,9 @@ function logClicked () {
   log = true
 };
 
-logger.addEventListener("click", logClicked);
-logger.addEventListener("click", createCard);
-logger.addEventListener("click", newInput);
-
 function newInput () {
   event.preventDefault();
   var plusCard = document.createElement("div");
-  // var boxColor = document.getElementsByClassName("new-card");
    plusCard.className = "new-card";
    document.getElementsByTagName("aside")[0].appendChild(plusCard);
 
@@ -247,7 +240,6 @@ function newInput () {
   };
 
   var totalTime = (userMin<10 ? "0" + userMin : userMin) + " MIN " + (userSec<10 ? "0" + userSec : userSec) + " SECONDS";
-
 
   plusCard.innerHTML += `
     <div>

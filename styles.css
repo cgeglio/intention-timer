@@ -348,22 +348,17 @@ h5{
 #heart-button {
   background-color: #46424D;
   border-radius: 19px;
-  width: 35px;
-  height: 35px;
-  float: right;
-  content: "";
-  margin-top: -24px;
   border: solid 0px;
+  content: "";
+  float: right;
   font-size: 16pt;
+  height: 35px;
+  margin-top: -24px;
+  width: 35px;
 }
 
 #heart-button:active {
   background-color: #FCBE24;
-}
-
-.hide {
-  float: right;
-  /* display: none; */
 }
 
 /* for tablet devices */
@@ -383,6 +378,7 @@ h5{
     display: flex;
     width: 100%;
   }
+  
   .ul {
     align-content: center;
     display: block;
